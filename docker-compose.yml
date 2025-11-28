@@ -1,0 +1,54 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysql:8
+    container_name: re-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: pass123
+      MYSQL_DATABASE: realestate_cms
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: pass123
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql
+
+  backend:
+    build: ./backend
+    container_name: re-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend/uploads:/app/uploads
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+    command: ["npm","run","dev"]
+
+  frontend:
+    build: ./frontend
+    container_name: re-frontend
+    restart: unless-stopped
+    environment:
+      - VITE_API_BASE=http://localhost:5000/api
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    command: ["npm","run","dev","--","--host"]
+
+volumes:
+  mysql_data:

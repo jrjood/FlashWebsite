@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "clients": "Clients",
+    "contact": "Contact",
+    "news": "News & Guides"
+  },
+  "buttons": {
+    "learnMore": "LEARN MORE",
+    "readMore": "Read More",
+    "contactUs": "Contact Us"
+  },
+  "contact": {
+    "emailLabel": "EMAIL US",
+    "callLabel": "CALL US",
+    "visitLabel": "VISIT US",
+    "email": "hr@investwithflash.com",
+    "phone": "+201118883882",
+    "address": "Villa 335, Al Narges 1, 90 St. Fifth Settlement - New Cairo | Egypt"
+  },
+  "footer": {
+    "rights": "Flash Investment 2025. All Rights Reserved.",
+    "developed": "Developed & Designed by"
+  }
+}

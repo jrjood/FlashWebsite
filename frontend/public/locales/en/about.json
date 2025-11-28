@@ -1,0 +1,47 @@
+{
+  "about": {
+    "title": "WHO WE ARE",
+    "text": "Since our establishment in 2001, Flash Investment has steadily grown into one of Egypt’s trusted real estate companies. Starting with a small team in Cairo, we have expanded to more than 100 professionals who bring expertise, dedication, and innovation to every project. Our portfolio spans residential, commercial, and mixed-use developments, each designed with a focus on quality, sustainability, and long-term value. Over the years, we have built a solid reputation for delivering projects that meet client expectations while contributing to the growth of vibrant communities.",
+    "highlight": "Our plan for the future is to continue expanding our footprint and to set new benchmarks in Egypt’s real estate market.",
+    "button": "get in touch"
+  },
+  "inspiration": {
+    "mission_title": "mission",
+    "mission_text": "Our mission is to deliver exceptional real estate developments that combine modern design, functionality, and sustainability. We are committed to providing clients and investors with lasting value, while ensuring communities thrive in safe and inspiring environments.",
+    "vision_title": "vision",
+    "vision_text": "Our vision is to become a leading name in the real estate sector by shaping innovative, sustainable, and high-quality developments. We aim to redefine modern living in Egypt and the region, building communities that stand the test of time."
+  },
+  "proposition": {
+    "title": "Our Founders",
+    "founder1_name": "Eng. Mohamed Mamdouh",
+    "founder1_title": "Co. Founder",
+    "founder1_bio": "Eng. Mohamed Mamdouh is a leader with a passion for innovation. With years of experience in the industry.",
+    "founder2_name": "Eng. Mohamed Mamdouh",
+    "founder2_title": "Co. Founder",
+    "founder2_bio": "Eng. Mohamed Mamdouh is a leader with a passion for innovation. With years of experience in the industry."
+  },
+  "small": {
+    "text": "SHAPING TOMORROW’S COMMUNITIES"
+  },
+  "values": {
+    "title": "values",
+    "items": [
+      {
+        "title": "Originality",
+        "text": "We design developments with unique character and modern appeal. Every project is approached with creativity to ensure it stands out while meeting the practical needs of residents and investors."
+      },
+      {
+        "title": "Time Management",
+        "text": "We value our clients’ time. With a skilled team and strong project management, we deliver on schedule without compromising quality ensuring every handover happens as promised."
+      },
+      {
+        "title": "Experience",
+        "text": "With over two decades of presence in the market, our experience is reflected in the trust of our clients and the quality of our projects. We’ve consistently delivered developments that enhance communities and create lasting value."
+      },
+      {
+        "title": "Quality",
+        "text": "Quality is at the core of everything we build. From materials and design to finishing and after-sales service, we ensure every detail meets the highest standards, creating homes and spaces that endure."
+      }
+    ]
+  }
+}

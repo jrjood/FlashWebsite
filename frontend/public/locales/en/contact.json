@@ -1,0 +1,54 @@
+{
+  "contact": {
+    "contact_starter": "Contact Us",
+    "follow_us": "Follow us on social media",
+    "select": {
+      "title": "Contact Options",
+      "buttons": {
+        "contact_us": "Send Mail",
+        "site_visit": "Site Visit",
+        "join_us": "Join Us"
+      }
+    },
+    "form": {
+      "back": "go back →",
+      "title": "GET IN TOUCH",
+      "placeholders": {
+        "full_name": "FULL NAME*",
+        "email": "EMAIL ADDRESS*",
+        "phone": "MOBILE NUMBER*",
+        "job_title": "JOB TITLE (OPTIONAL)",
+        "company_name": "COMPANY NAME",
+        "message": "MESSAGE"
+      },
+      "button": "SEND"
+    },
+    "site_visit": {
+      "back": "go back →",
+      "title": "Reserve a Site Visit",
+      "placeholders": {
+        "full_name": "FULL NAME*",
+        "email": "EMAIL ADDRESS*",
+        "phone": "MOBILE NUMBER*",
+        "date": "Select a Date*",
+        "message": "MESSAGE"
+      },
+      "button": "Book Now"
+    },
+    "join_crew": {
+      "back": "go back →",
+      "title": "Wanna be a part of the crew?",
+      "placeholders": {
+        "full_name": "FULL NAME*",
+        "email": "EMAIL ADDRESS*",
+        "phone": "MOBILE NUMBER*"
+      },
+      "upload": {
+        "choose_or_drag": "Choose a file or drag it here",
+        "file_selected": "File selected",
+        "remove": "Remove"
+      },
+      "button": "SEND"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "projects": {
+    "pageTitle": "المشروعات",
+    "inspirationQuote": "نرتقي بمعايير المعيشة",
+    "sectionTitle": "المشروعات حسب المنطقة",
+    "categories": {
+      "all": "الكل",
+      "new-cairo": "القاهرة الجديدة",
+      "new-capital": "العاصمة الإدارية الجديدة",
+      "sheikh-zayed": "الشيخ زايد",
+      "6th-october": "مدينة 6 أكتوبر",
+      "north-coast": "الساحل الشمالي",
+      "ain-sokhna": "العين السخنة",
+      "maadi": "المعادي",
+      "heliopolis": "مصر الجديدة"
+    },
+    "items": {
+      "project1": "المشروع ١",
+      "project2": "المشروع ٢",
+      "project3": "المشروع ٣",
+      "project4": "المشروع ٤",
+      "project5": "المشروع ٥"
+    }
+  }
+}

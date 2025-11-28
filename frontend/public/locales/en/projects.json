@@ -1,0 +1,25 @@
+{
+  "projects": {
+    "pageTitle": "Projects",
+    "inspirationQuote": "ELEVATING LIVING STANDARDS",
+    "sectionTitle": "Projects by Area",
+    "categories": {
+      "all": "All",
+      "new-cairo": "New Cairo",
+      "new-capital": "New Administrative Capital",
+      "sheikh-zayed": "Sheikh Zayed",
+      "6th-october": "6th of October City",
+      "north-coast": "North Coast",
+      "ain-sokhna": "Ain Sokhna",
+      "maadi": "Maadi",
+      "heliopolis": "Heliopolis"
+    },
+    "items": {
+      "project1": "Project 1",
+      "project2": "Project 2",
+      "project3": "Project 3",
+      "project4": "Project 4",
+      "project5": "Project 5"
+    }
+  }
+}
