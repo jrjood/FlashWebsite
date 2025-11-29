@@ -36,7 +36,7 @@ const Wrapper = styled.section`
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 2rem;
-    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    /* text-shadow: 2px 2px 3px rgb(0, 0, 0); */
   }
   .highlight {
     font-size: 1.7rem;

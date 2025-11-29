@@ -4,7 +4,7 @@ import aboutImage from '../../../assets/images/backgrounds/HomePageImages/about-
 const Wrapper = styled.section`
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #0f5132 0%, #0a3d24 50%, #000000 100%);
+  background: linear-gradient(170deg, #020906ff 0%, #244937ff 100%);
   gap: 2rem;
   /* height: 100vh; */
   width: 100%;

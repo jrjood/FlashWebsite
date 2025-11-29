@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  background: linear-gradient(135deg, #0f5132 0%, #0a3d24 50%, #000000 100%);
-  color: var(--white);
+  color: var(--black);
   /* height: 15rem; */
   padding: 0 2rem;
   padding-top: 4rem;
@@ -42,7 +41,7 @@ const Wrapper = styled.section`
   .divider {
     width: 1px;
     height: 5rem;
-    background: var(--white);
+    background: var(--black);
     opacity: 0.2;
     margin: 0 1rem;
   }

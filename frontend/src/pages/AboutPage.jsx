@@ -15,7 +15,7 @@ const AboutPage = () => {
       <PageStarter title='about us' imgPath={bgImage} />
       <div
         style={{
-          background: 'linear-gradient(135deg, #0f5132 0%, #1a7f4f 100%)',
+          background: 'linear-gradient( #0f5132 0%, #0a3d24 50%, #000000 100%)',
         }}
       >
         <AboutSection />

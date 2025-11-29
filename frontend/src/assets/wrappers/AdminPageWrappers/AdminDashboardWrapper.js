@@ -76,7 +76,7 @@ const Wrapper = styled.div`
 
   .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
     gap: 2rem;
     max-width: 900px;
     margin: 0 auto;
@@ -141,6 +141,11 @@ const Wrapper = styled.div`
 
   .posts-icon {
     background: linear-gradient(135deg, #0a3d24 0%, #0f5132 100%);
+    color: white;
+  }
+
+  .leads-icon {
+    background: linear-gradient(135deg, #0f5132 0%, #1a7f4f 100%);
     color: white;
   }
 

@@ -47,4 +47,26 @@ export default {
     api.post('/uploads/cover', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     }),
+
+  // contact & leads
+  submitContact: (data) => api.post('/contact', data),
+  submitSiteVisit: (data) => api.post('/site-visits', data),
+  submitCareerApplication: (formData) =>
+    api.post('/careers', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }),
+
+  // admin: get all leads
+  getContacts: (params) => api.get('/contact', { params }),
+  getSiteVisits: (params) => api.get('/site-visits', { params }),
+  getJobApplications: (params) => api.get('/careers', { params }),
+
+  // admin: update lead status
+  updateSiteVisitStatus: (id, data) => api.patch(`/site-visits/${id}`, data),
+  updateJobApplicationStatus: (id, data) => api.patch(`/careers/${id}`, data),
+
+  // admin: delete leads
+  deleteContact: (id) => api.delete(`/contact/${id}`),
+  deleteSiteVisit: (id) => api.delete(`/site-visits/${id}`),
+  deleteJobApplication: (id) => api.delete(`/careers/${id}`),
 };

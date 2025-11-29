@@ -8,7 +8,7 @@ const Wrapper = styled.footer`
   justify-content: space-between;
 
   /* background: linear-gradient(135deg, #0f5132 0%, #0a3d24 100%); */
-  background: linear-gradient(135deg, #0f5132 0%, #1a7f4f 100%);
+  background: linear-gradient(150deg, #0f5132 0%, #0a3d24 50%, #000000 100%);
 
   /* padding-bottom: 4rem; */
   border-top: 0.1px solid rgba(255, 255, 255, 0.23);

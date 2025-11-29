@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   background: #f7fafc;
 
   .hero-section {
-    background: linear-gradient(135deg, #0f5132 0%, #1a7f4f 100%);
+    background: linear-gradient(360deg, #185d3dff 0%, #0a3d24 50% 100%);
     padding: 6rem 2rem 4rem;
     text-align: center;
     position: relative;

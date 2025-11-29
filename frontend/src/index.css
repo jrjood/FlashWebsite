@@ -42,7 +42,7 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  background-color: var(--main-green);
+  background: linear-gradient(150deg, #0f5132 0%, #0a3d24 50%, #000000 100%);
   /* Ensure safe area fills properly on iPhones */
   padding-bottom: env(safe-area-inset-bottom);
 }

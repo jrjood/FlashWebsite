@@ -13,7 +13,7 @@ const Wrapper = styled.section`
   /* ✅ the important bit: bind to a prop so it always wins */
   background-position-x: ${(p) => (p.$rtl ? '2%' : '98%')};
   background-size: contain;
-  border-bottom: 0.1rem solid var(--main-green);
+  /* border-bottom: 0.1rem solid var(--main-green); */
 
   .container {
     width: 100%;

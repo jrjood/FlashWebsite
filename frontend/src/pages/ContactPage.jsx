@@ -19,8 +19,15 @@ const ContactPage = () => {
       <PageStarter title={t('contact.contact_starter')} imgPath={bgImage} />
       {/* <ContactForm /> */}
       {/* <JoinCrewForm /> */}
-      <Outlet />
-      <NewsletterForm />
+      <div
+        style={{
+          background:
+            'linear-gradient(360deg, #ffffffff 0%, #faf8ef 50%, #f7f4d3ff 100%)',
+        }}
+      >
+        <Outlet />
+        <NewsletterForm />
+      </div>
       {/* <SiteVisitForm /> */}
       {/* <ContactSelectForm /> */}
     </>

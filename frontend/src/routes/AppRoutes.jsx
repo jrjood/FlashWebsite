@@ -43,6 +43,7 @@ import AdminProjects from '../pages/Admin/AdminProjects';
 import AdminProjectEditor from '../pages/Admin/AdminProjectEditor';
 import AdminPosts from '../pages/Admin/AdminPosts';
 import AdminPostEditor from '../pages/Admin/AdminPostEditor';
+import AdminLeads from '../pages/Admin/AdminLeads';
 
 import { useAuth } from '../hooks/useAuth';
 
@@ -96,7 +97,7 @@ const router = createBrowserRouter([
             element: <ContactPage />,
             children: [
               { index: true, element: <ContactSelectForm /> },
-              { path: 'Contact-Us', element: <ContactForm /> },
+              { path: 'contact-us', element: <ContactForm /> },
               { path: 'site-visit', element: <SiteVisitForm /> },
               { path: 'join-us', element: <JoinCrewForm /> },
             ],
@@ -161,6 +162,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <AdminPostEditor />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: '/admin/leads',
+        element: (
+          <ProtectedRoute>
+            <AdminLeads />
           </ProtectedRoute>
         ),
       },

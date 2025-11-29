@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.section`
   position: relative;
   /* background-color: var(--main-green); */
-  background: linear-gradient(135deg, #0f5132 0%, #1a7f4f 100%);
+  background: linear-gradient(135deg, #0f5132 0%, #0a3d24 50%, #1c2b1aff 100%);
   color: var(--white);
   width: 100%;
   height: fit-content;
