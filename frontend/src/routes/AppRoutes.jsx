@@ -1,51 +1,59 @@
 // src/routes/AppRoutes.jsx
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
+import PageLoader from '../components/PageLoader';
 
 import App from '../App';
 
-// ---- Old main layout & pages ----
+// ---- Core layout & pages (load immediately) ----
 import HomeLayout from '../pages/HomeLayout';
 import Error from '../pages/Error';
 import HomePage from '../pages/HomePage';
-import AboutPage from '../pages/AboutPage';
-import ClientsPage from '../pages/ClientsPage';
-import ContactPage from '../pages/ContactPage';
-import ProjectsPage from '../pages/ProjectsPage';
 
-// ---- Contact nested forms (from old layout) ----
-import {
-  ContactForm,
-  ContactSelectForm,
-  JoinCrewForm,
-  SiteVisitForm,
-} from '../layout/ContactPage';
+// ---- Lazy load all other pages ----
+const AboutPage = lazy(() => import('../pages/AboutPage'));
+const ClientsPage = lazy(() => import('../pages/ClientsPage'));
+const ContactPage = lazy(() => import('../pages/ContactPage'));
+const ProjectsPage = lazy(() => import('../pages/ProjectsPage'));
 
-// ---- Old "AllProjects" static pages ----
-import {
-  ProjectOne,
-  ProjectTwo,
-  ProjectThree,
-  ProjectFour,
-  ProjectFive,
-} from '../pages/AllProjects';
+// ---- Contact nested forms (lazy loaded) ----
+const ContactForm = lazy(() => import('../layout/ContactPage/ContactForm'));
+const ContactSelectForm = lazy(() =>
+  import('../layout/ContactPage/ContactSelectForm')
+);
+const JoinCrewForm = lazy(() => import('../layout/ContactPage/JoinCrewForm'));
+const SiteVisitForm = lazy(() => import('../layout/ContactPage/SiteVisitForm'));
 
-// ---- New template: Blog + dynamic projects ----
-import Blog from '../pages/Blog/Blog';
-import PostDetail from '../pages/Blog/PostDetail';
-import Projects from '../pages/Projects/Projects';
-import ProjectDetail from '../pages/Projects/ProjectDetail';
+// ---- Old "AllProjects" static pages (lazy loaded) ----
+const ProjectOne = lazy(() => import('../pages/AllProjects/ProjectOne'));
+const ProjectTwo = lazy(() => import('../pages/AllProjects/ProjectTwo'));
+const ProjectThree = lazy(() => import('../pages/AllProjects/ProjectThree'));
+const ProjectFour = lazy(() => import('../pages/AllProjects/ProjectFour'));
+const ProjectFive = lazy(() => import('../pages/AllProjects/ProjectFive'));
 
-// ---- New template: Admin + Auth ----
-import AdminLogin from '../pages/Admin/AdminLogin';
-import AdminDashboard from '../pages/Admin/AdminDashboard';
-import AdminProjects from '../pages/Admin/AdminProjects';
-import AdminProjectEditor from '../pages/Admin/AdminProjectEditor';
-import AdminPosts from '../pages/Admin/AdminPosts';
-import AdminPostEditor from '../pages/Admin/AdminPostEditor';
-import AdminLeads from '../pages/Admin/AdminLeads';
+// ---- Blog + dynamic projects (lazy loaded) ----
+const Blog = lazy(() => import('../pages/Blog/Blog'));
+const PostDetail = lazy(() => import('../pages/Blog/PostDetail'));
+const Projects = lazy(() => import('../pages/Projects/Projects'));
+const ProjectDetail = lazy(() => import('../pages/Projects/ProjectDetail'));
+
+// ---- Admin pages (lazy loaded - not loaded for regular users) ----
+const AdminLogin = lazy(() => import('../pages/Admin/AdminLogin'));
+const AdminDashboard = lazy(() => import('../pages/Admin/AdminDashboard'));
+const AdminProjects = lazy(() => import('../pages/Admin/AdminProjects'));
+const AdminProjectEditor = lazy(() =>
+  import('../pages/Admin/AdminProjectEditor')
+);
+const AdminPosts = lazy(() => import('../pages/Admin/AdminPosts'));
+const AdminPostEditor = lazy(() => import('../pages/Admin/AdminPostEditor'));
+const AdminLeads = lazy(() => import('../pages/Admin/AdminLeads'));
 
 import { useAuth } from '../hooks/useAuth';
+
+// Suspense wrapper for lazy loaded routes
+const LazyRoute = ({ children }) => (
+  <Suspense fallback={<PageLoader />}>{children}</Suspense>
+);
 
 // Small protected route wrapper using your Auth context
 function ProtectedRoute({ children }) {
@@ -73,46 +81,164 @@ const router = createBrowserRouter([
           { index: true, element: <HomePage /> },
 
           // Static pages
-          { path: 'about', element: <AboutPage /> },
-          { path: 'clients', element: <ClientsPage /> },
+          {
+            path: 'about',
+            element: (
+              <LazyRoute>
+                <AboutPage />
+              </LazyRoute>
+            ),
+          },
+          {
+            path: 'clients',
+            element: (
+              <LazyRoute>
+                <ClientsPage />
+              </LazyRoute>
+            ),
+          },
 
           // Projects (new dynamic)
-          { path: 'projects', element: <ProjectsPage /> },
-          { path: 'projects/:title', element: <ProjectDetail /> },
+          {
+            path: 'projects',
+            element: (
+              <LazyRoute>
+                <ProjectsPage />
+              </LazyRoute>
+            ),
+          },
+          {
+            path: 'projects/:title',
+            element: (
+              <LazyRoute>
+                <ProjectDetail />
+              </LazyRoute>
+            ),
+          },
 
           // Old static project pages still available
-          { path: 'projects/proj1', element: <ProjectOne /> },
-          { path: 'projects/proj2', element: <ProjectTwo /> },
-          { path: 'projects/proj3', element: <ProjectThree /> },
-          { path: 'projects/proj4', element: <ProjectFour /> },
-          { path: 'projects/proj5', element: <ProjectFive /> },
+          {
+            path: 'projects/proj1',
+            element: (
+              <LazyRoute>
+                <ProjectOne />
+              </LazyRoute>
+            ),
+          },
+          {
+            path: 'projects/proj2',
+            element: (
+              <LazyRoute>
+                <ProjectTwo />
+              </LazyRoute>
+            ),
+          },
+          {
+            path: 'projects/proj3',
+            element: (
+              <LazyRoute>
+                <ProjectThree />
+              </LazyRoute>
+            ),
+          },
+          {
+            path: 'projects/proj4',
+            element: (
+              <LazyRoute>
+                <ProjectFour />
+              </LazyRoute>
+            ),
+          },
+          {
+            path: 'projects/proj5',
+            element: (
+              <LazyRoute>
+                <ProjectFive />
+              </LazyRoute>
+            ),
+          },
 
           // Blog
-          { path: 'blog', element: <Blog /> },
-          { path: 'blog/:slug', element: <PostDetail /> },
+          {
+            path: 'blog',
+            element: (
+              <LazyRoute>
+                <Blog />
+              </LazyRoute>
+            ),
+          },
+          {
+            path: 'blog/:slug',
+            element: (
+              <LazyRoute>
+                <PostDetail />
+              </LazyRoute>
+            ),
+          },
 
           // Contact with nested forms
           {
             path: 'contact',
-            element: <ContactPage />,
+            element: (
+              <LazyRoute>
+                <ContactPage />
+              </LazyRoute>
+            ),
             children: [
-              { index: true, element: <ContactSelectForm /> },
-              { path: 'contact-us', element: <ContactForm /> },
-              { path: 'site-visit', element: <SiteVisitForm /> },
-              { path: 'join-us', element: <JoinCrewForm /> },
+              {
+                index: true,
+                element: (
+                  <LazyRoute>
+                    <ContactSelectForm />
+                  </LazyRoute>
+                ),
+              },
+              {
+                path: 'contact-us',
+                element: (
+                  <LazyRoute>
+                    <ContactForm />
+                  </LazyRoute>
+                ),
+              },
+              {
+                path: 'site-visit',
+                element: (
+                  <LazyRoute>
+                    <SiteVisitForm />
+                  </LazyRoute>
+                ),
+              },
+              {
+                path: 'join-us',
+                element: (
+                  <LazyRoute>
+                    <JoinCrewForm />
+                  </LazyRoute>
+                ),
+              },
             ],
           },
         ],
       },
 
       // Admin routes (not under HomeLayout, but still under App layout)
-      { path: '/admin/login', element: <AdminLogin /> },
+      {
+        path: '/admin/login',
+        element: (
+          <LazyRoute>
+            <AdminLogin />
+          </LazyRoute>
+        ),
+      },
 
       {
         path: '/admin/dashboard',
         element: (
           <ProtectedRoute>
-            <AdminDashboard />
+            <LazyRoute>
+              <AdminDashboard />
+            </LazyRoute>
           </ProtectedRoute>
         ),
       },
@@ -121,7 +247,9 @@ const router = createBrowserRouter([
         path: '/admin/projects',
         element: (
           <ProtectedRoute>
-            <AdminProjects />
+            <LazyRoute>
+              <AdminProjects />
+            </LazyRoute>
           </ProtectedRoute>
         ),
       },
@@ -129,7 +257,9 @@ const router = createBrowserRouter([
         path: '/admin/projects/new',
         element: (
           <ProtectedRoute>
-            <AdminProjectEditor />
+            <LazyRoute>
+              <AdminProjectEditor />
+            </LazyRoute>
           </ProtectedRoute>
         ),
       },
@@ -137,7 +267,9 @@ const router = createBrowserRouter([
         path: '/admin/projects/:id',
         element: (
           <ProtectedRoute>
-            <AdminProjectEditor />
+            <LazyRoute>
+              <AdminProjectEditor />
+            </LazyRoute>
           </ProtectedRoute>
         ),
       },
@@ -145,7 +277,9 @@ const router = createBrowserRouter([
         path: '/admin/posts',
         element: (
           <ProtectedRoute>
-            <AdminPosts />
+            <LazyRoute>
+              <AdminPosts />
+            </LazyRoute>
           </ProtectedRoute>
         ),
       },
@@ -153,7 +287,9 @@ const router = createBrowserRouter([
         path: '/admin/posts/new',
         element: (
           <ProtectedRoute>
-            <AdminPostEditor />
+            <LazyRoute>
+              <AdminPostEditor />
+            </LazyRoute>
           </ProtectedRoute>
         ),
       },
@@ -161,7 +297,9 @@ const router = createBrowserRouter([
         path: '/admin/posts/:id',
         element: (
           <ProtectedRoute>
-            <AdminPostEditor />
+            <LazyRoute>
+              <AdminPostEditor />
+            </LazyRoute>
           </ProtectedRoute>
         ),
       },
@@ -169,7 +307,9 @@ const router = createBrowserRouter([
         path: '/admin/leads',
         element: (
           <ProtectedRoute>
-            <AdminLeads />
+            <LazyRoute>
+              <AdminLeads />
+            </LazyRoute>
           </ProtectedRoute>
         ),
       },

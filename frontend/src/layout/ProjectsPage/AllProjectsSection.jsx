@@ -3,9 +3,14 @@ import { useTranslation } from 'react-i18next';
 import Wrapper from '../../assets/wrappers/CardsSection';
 import { Cards, CheckboxFilter } from '../../components';
 import api from '../../api/api';
+import useScrollReveal from '../../hooks/useScrollReveal';
+import { ScrollReveal } from '../../components/ScrollReveal';
 
 const AllProjectsSection = () => {
   const { t } = useTranslation('projects');
+  const { ref: projectsRef, isVisible: projectsVisible } = useScrollReveal({
+    threshold: 0.1,
+  });
 
   const [projects, setProjects] = useState([]);
   const [page, setPage] = useState(1);
@@ -63,28 +68,48 @@ const AllProjectsSection = () => {
   }, [selectedAreas, selectedTypes]);
 
   return (
-    <Wrapper className='section-container'>
+    <Wrapper className='section-container' ref={projectsRef}>
       <div className='container'>
         <div className='header'>
-          <h2 className='title title-medium'>{t('projects.sectionTitle')}</h2>
+          <ScrollReveal
+            $isVisible={projectsVisible}
+            $animation='fadeInUp'
+            $duration='0.8s'
+          >
+            <h2 className='title title-medium'>{t('projects.sectionTitle')}</h2>
+          </ScrollReveal>
 
-          <div className='filters-row'>
-            <CheckboxFilter
-              title='Filter by Area'
-              options={areaOptions}
-              selected={selectedAreas}
-              onChange={setSelectedAreas}
-            />
-            <CheckboxFilter
-              title='Filter by Type'
-              options={typeOptions}
-              selected={selectedTypes}
-              onChange={setSelectedTypes}
-            />
-          </div>
+          <ScrollReveal
+            $isVisible={projectsVisible}
+            $animation='fadeInUp'
+            $duration='0.8s'
+            $delay='0.2s'
+          >
+            <div className='filters-row'>
+              <CheckboxFilter
+                title='Filter by Area'
+                options={areaOptions}
+                selected={selectedAreas}
+                onChange={setSelectedAreas}
+              />
+              <CheckboxFilter
+                title='Filter by Type'
+                options={typeOptions}
+                selected={selectedTypes}
+                onChange={setSelectedTypes}
+              />
+            </div>
+          </ScrollReveal>
         </div>
 
-        <Cards cardsData={projects} gridRows='big-screen grid' />
+        <ScrollReveal
+          $isVisible={projectsVisible}
+          $animation='fadeInUp'
+          $duration='0.8s'
+          $delay='0.3s'
+        >
+          <Cards cardsData={projects} gridRows='big-screen grid' />
+        </ScrollReveal>
 
         {total > 12 && (
           <div className='pagination'>

@@ -5,7 +5,13 @@ export default function PostCard({ post }) {
   return (
     <div className='card'>
       <Link className='post-image-box' to={`/blog/${post.slug}`}>
-        <img className='post-image' src={post.coverImage} alt={post.title} />
+        <img
+          className='post-image'
+          src={post.coverImage}
+          alt={post.title}
+          loading='lazy'
+          decoding='async'
+        />
       </Link>
       <div className='card-body'>
         <small className='post-date'>

@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 dotenv.config();
 import cors from 'cors';
+import compression from 'compression';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import authRoutes from './routes/auth.routes.js';
@@ -17,6 +18,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
+// Enable gzip compression for all responses
+app.use(compression());
+
 app.use(express.json());
 
 const origins = (process.env.CORS_ORIGINS || '')
@@ -29,9 +34,25 @@ app.use((req, res, next) => {
   next();
 });
 
-// static uploads
+// static uploads with caching headers
 const uploadDir = path.join(process.cwd(), process.env.UPLOAD_DIR || 'uploads');
-app.use('/uploads', express.static(uploadDir));
+app.use(
+  '/uploads',
+  express.static(uploadDir, {
+    maxAge: '1y',
+    etag: true,
+    lastModified: true,
+    immutable: true,
+  })
+);
+
+// Add caching middleware for API GET requests
+app.use('/api', (req, res, next) => {
+  if (req.method === 'GET') {
+    res.set('Cache-Control', 'public, max-age=300'); // 5 minutes
+  }
+  next();
+});
 
 // api
 app.use('/api/auth', authRoutes);

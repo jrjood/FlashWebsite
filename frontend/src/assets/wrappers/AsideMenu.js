@@ -40,6 +40,14 @@ const AsideMenu = styled.aside`
     color: var(--white);
   }
 
+  .lang-select {
+    color: var(--white);
+  }
+
+  .test .line {
+    background-color: var(--white);
+  }
+
   .nav-links {
     display: flex;
     flex-direction: column;

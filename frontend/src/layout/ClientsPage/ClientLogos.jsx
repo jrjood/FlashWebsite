@@ -60,7 +60,13 @@ const ClientLogos = () => {
     <Wrapper className='client-logos'>
       <div className={`logos-grid ${fade ? 'fade-out' : 'fade-in'}`}>
         {displayedLogos.map((logo, idx) => (
-          <img key={idx} src={logo.src} alt={logo.alt} />
+          <img
+            key={idx}
+            src={logo.src}
+            alt={logo.alt}
+            loading='lazy'
+            decoding='async'
+          />
         ))}
       </div>
 

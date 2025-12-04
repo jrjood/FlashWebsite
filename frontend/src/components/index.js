@@ -17,3 +17,5 @@ export { default as Founders } from './Founders';
 export { default as InspirationSection } from './InspirationSection';
 export { default as CheckboxFilter } from './CheckboxFilter';
 export { default as HomeCards } from './HomeCards';
+export { default as PageLoader } from './PageLoader';
+export { default as ScrollReveal, StaggerContainer } from './ScrollReveal';

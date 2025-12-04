@@ -20,7 +20,7 @@ export default function Gallery({ media = [] }) {
               setOpen(true);
             }}
           >
-            <img src={src} alt='' />
+            <img src={src} alt='' loading='lazy' decoding='async' />
           </div>
         ))}
         {videos.map((v) => (

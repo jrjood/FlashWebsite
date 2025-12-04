@@ -114,6 +114,7 @@ export default function LanguageSelect({ $isSticky }) {
         onClick={() => setOpen((o) => !o)}
         onKeyDown={onKeyDown}
         $isSticky={$isSticky}
+        className='lang-select'
       >
         {buttonLabel}
         <Chevron $open={open}>

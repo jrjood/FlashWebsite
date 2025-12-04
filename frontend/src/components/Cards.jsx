@@ -21,22 +21,16 @@ const Cards = ({ gridRows, cardsData }) => {
             autoplay={{ delay: 2000 }}
           >
             {cardsData.map((proj, i) => (
-              <SwiperSlide>
-                <>
-                  <Link
-                    to={`/projects/${proj.title}`}
-                    key={i}
-                    className='card-slide'
-                  >
-                    <img
-                      className='img'
-                      src={proj.coverImage}
-                      alt={t(proj.key)}
-                    />
-                    <div className='overlay' />
-                    <div className='label'>{t(proj.title)}</div>
-                  </Link>
-                </>
+              <SwiperSlide key={proj.id || i}>
+                <Link to={`/projects/${proj.title}`} className='card-slide'>
+                  <img
+                    className='img'
+                    src={proj.coverImage}
+                    alt={t(proj.key)}
+                  />
+                  <div className='overlay' />
+                  <div className='label'>{t(proj.title)}</div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

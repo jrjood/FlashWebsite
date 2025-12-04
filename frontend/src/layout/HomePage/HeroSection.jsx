@@ -2,12 +2,17 @@ import heroVideo from '../../assets/images/backgrounds/HomePageImages/hero-bg.mp
 import Wrapper from '../../assets/wrappers/HomePageWrappers/HeroSection';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useScrollReveal from '../../hooks/useScrollReveal';
+import { ScrollReveal } from '../../components/ScrollReveal';
 
 const HeroSection = () => {
   const { t } = useTranslation('home');
+  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal({
+    threshold: 0.2,
+  });
 
   return (
-    <Wrapper id='hero' className='section-container'>
+    <Wrapper id='hero' className='section-container' ref={heroRef}>
       <div>
         <div className='overlay' />
         <video
@@ -23,20 +28,33 @@ const HeroSection = () => {
       </div>
 
       <div className='content '>
-        <div className='left flex-center'>
-          <div className='info'>
-            <p>{t('hero.line1')}</p>
-            <p>{t('hero.line2')}</p>
-            {/* <p>{t('hero.line3')}</p> */}
-            {/* <p>{t('hero.line4')}</p> */}
+        <ScrollReveal
+          $isVisible={heroVisible}
+          $animation='fadeInLeft'
+          $duration='1s'
+        >
+          <div className='left flex-center'>
+            <div className='info'>
+              <p>{t('hero.line1')}</p>
+              <p>{t('hero.line2')}</p>
+              {/* <p>{t('hero.line3')}</p> */}
+              {/* <p>{t('hero.line4')}</p> */}
+            </div>
           </div>
-        </div>
-        <div className='right '>
-          <p>{t('hero.paragraph')}</p>
-          <Link className='btn-container' to='about'>
-            <button className='btn'>{t('hero.button')}</button>
-          </Link>
-        </div>
+        </ScrollReveal>
+        <ScrollReveal
+          $isVisible={heroVisible}
+          $animation='fadeInRight'
+          $duration='1s'
+          $delay='0.2s'
+        >
+          <div className='right '>
+            <p>{t('hero.paragraph')}</p>
+            <Link className='btn-container' to='about'>
+              <button className='btn'>{t('hero.button')}</button>
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </Wrapper>
   );
