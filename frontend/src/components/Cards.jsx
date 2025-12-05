@@ -38,11 +38,7 @@ const Cards = ({ gridRows, cardsData }) => {
       )}
       <div className={gridRows}>
         {cardsData.map((proj, i) => (
-          <Link
-            to={`/projects/${proj.title}`}
-            className={proj.id == 1 ? 'card big-card' : 'card'}
-            key={i}
-          >
+          <Link to={`/projects/${proj.title}`} className={'card'} key={i}>
             <img className='img' src={proj.coverImage} alt={t(proj.key)} />
             <div className='overlay' />
             <div className='label'>{t(proj.title)}</div>

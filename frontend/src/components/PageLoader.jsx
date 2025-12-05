@@ -70,7 +70,7 @@ const Wrapper = styled.div`
     max-width: 150px;
     animation: pulse 2s ease-in-out infinite;
     img {
-      max-width: 30rem;
+      max-width: 12rem;
     }
   }
 
@@ -87,8 +87,8 @@ const Wrapper = styled.div`
   }
 
   .spinner {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     border: 4px solid rgba(0, 0, 0, 0.1);
     border-top: 4px solid #0f5132;
     border-radius: 50%;

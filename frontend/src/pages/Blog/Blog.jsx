@@ -1,20 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import api from '../../api/api';
 import Wrapper from '../../assets/wrappers/BlogPageWrappers/BlogWrapper';
 
 export default function Blog() {
+  const { t } = useTranslation('blog');
   const [posts, setPosts] = useState([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
-  const limit = 12;
+  const [loading, setLoading] = useState(false);
+  const limit = 9;
 
   useEffect(() => {
+    setLoading(true);
     api.getPosts({ page, limit }).then((r) => {
-      setPosts(r.data.data);
+      if (page === 1) {
+        setPosts(r.data.data);
+      } else {
+        setPosts((prev) => [...prev, ...r.data.data]);
+      }
       setTotal(r.data.total);
+      setLoading(false);
     });
   }, [page]);
+
+  const handleLoadMore = () => {
+    setPage((prev) => prev + 1);
+  };
+
+  const hasMore = posts.length < total;
 
   const formatDate = (dateString) => {
     if (!dateString) return '';
@@ -27,21 +42,18 @@ export default function Blog() {
 
   return (
     <Wrapper>
-      <section className='hero-section'>
+      <section id='hero' className='hero-section'>
         <div className='hero-content'>
-          <h1 className='hero-title'>Real Estate Insights & News</h1>
-          <p className='hero-subtitle'>
-            Stay updated with the latest trends, tips, and insights from the
-            world of real estate
-          </p>
+          <h1 className='hero-title'>{t('hero.title')}</h1>
+          <p className='hero-subtitle'>{t('hero.subtitle')}</p>
         </div>
       </section>
 
       <div className='blog-container'>
         {posts.length === 0 ? (
           <div className='empty-state'>
-            <h2>No posts yet</h2>
-            <p>Check back soon for exciting real estate content!</p>
+            <h2>{t('empty_state.title')}</h2>
+            <p>{t('empty_state.description')}</p>
           </div>
         ) : (
           <>
@@ -136,25 +148,49 @@ export default function Blog() {
               ))}
             </div>
 
-            <div className='pagination'>
-              <button
-                className='pagination-btn'
-                disabled={page <= 1}
-                onClick={() => setPage((p) => p - 1)}
+            {hasMore && (
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  marginTop: '3rem',
+                }}
               >
-                ← Previous
-              </button>
-              <span className='pagination-info'>
-                Page {page} of {Math.ceil(total / limit)}
-              </span>
-              <button
-                className='pagination-btn'
-                disabled={page * limit >= total}
-                onClick={() => setPage((p) => p + 1)}
-              >
-                Next →
-              </button>
-            </div>
+                <button
+                  onClick={handleLoadMore}
+                  disabled={loading}
+                  style={{
+                    padding: '0.75rem 2rem',
+                    background: 'white',
+                    color: '#0f5132',
+                    border: '2px solid #0f5132',
+                    borderRadius: '8px',
+                    fontWeight: 600,
+                    fontSize: '1rem',
+                    cursor: loading ? 'not-allowed' : 'pointer',
+                    transition: 'all 0.2s',
+                    opacity: loading ? 0.6 : 1,
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!loading) {
+                      e.target.style.background = '#0f5132';
+                      e.target.style.color = 'white';
+                      e.target.style.transform = 'translateY(-2px)';
+                      e.target.style.boxShadow =
+                        '0 4px 12px rgba(15, 81, 50, 0.3)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'white';
+                    e.target.style.color = '#0f5132';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = 'none';
+                  }}
+                >
+                  {loading ? t('loading') : t('load_more')}
+                </button>
+              </div>
+            )}
           </>
         )}
       </div>

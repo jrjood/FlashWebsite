@@ -10,7 +10,9 @@
   "buttons": {
     "learnMore": "اعرف أكثر",
     "readMore": "اقرأ المزيد",
-    "contactUs": "تواصل معنا"
+    "contactUs": "تواصل معنا",
+    "showMore": "إظهار المزيد",
+    "loading": "تحميل..."
   },
   "contact": {
     "emailLabel": "راسلنا",

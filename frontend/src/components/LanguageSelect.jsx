@@ -60,9 +60,9 @@ export default function LanguageSelect({ $isSticky }) {
   const selectIndex = (i) => {
     const lang = LANGS[i];
     if (!lang) return;
-    i18n.changeLanguage(lang.code); // persist + flips dir via your i18n.js
     setOpen(false);
-    btnRef.current?.focus();
+    localStorage.setItem('lng', lang.code); // Save directly to localStorage
+    window.location.reload(); // Reload - i18n will read from localStorage
   };
 
   const onKeyDown = (e) => {

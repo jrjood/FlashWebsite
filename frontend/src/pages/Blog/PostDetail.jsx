@@ -19,7 +19,9 @@ export default function PostDetail() {
   if (!post) {
     return (
       <Wrapper>
-        <div className='loading'>Loading post...</div>
+        <div id='hero' className='loading'>
+          Loading post...
+        </div>
       </Wrapper>
     );
   }
@@ -37,7 +39,7 @@ export default function PostDetail() {
 
   return (
     <Wrapper>
-      <div className='post-hero'>
+      <div id='hero' className='post-hero'>
         {post.coverImage && (
           <img
             src={post.coverImage}

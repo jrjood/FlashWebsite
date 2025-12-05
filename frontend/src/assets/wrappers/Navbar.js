@@ -14,13 +14,15 @@ const Wrapper = styled.nav`
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 0 3rem;
     justify-content: space-between;
     align-items: center;
     /* color: var(--white); */
     font-weight: 100;
+    font-size: 0.8rem;
     .news {
       white-space: nowrap;
+      font-size: 0.8rem;
     }
 
     a {
@@ -85,7 +87,7 @@ const Wrapper = styled.nav`
 
     .nav-link {
       color: ${({ $isSticky }) => ($isSticky ? '#050505' : 'var(--white)')};
-      font-size: 1rem;
+      /* font-size: 1rem; */
     }
 
     li:hover {

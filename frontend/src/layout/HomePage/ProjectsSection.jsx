@@ -53,6 +53,7 @@ const ProjectsSection = () => {
         </ScrollReveal>
 
         <ScrollReveal
+          className='btn-container'
           $isVisible={projectsVisible}
           $animation='fadeInUp'
           $duration='0.8s'

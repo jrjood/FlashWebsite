@@ -8,6 +8,7 @@ import { ScrollReveal } from '../../components/ScrollReveal';
 
 const AllProjectsSection = () => {
   const { t } = useTranslation('projects');
+  const { t: t2 } = useTranslation('common');
   const { ref: projectsRef, isVisible: projectsVisible } = useScrollReveal({
     threshold: 0.1,
   });
@@ -15,6 +16,7 @@ const AllProjectsSection = () => {
   const [projects, setProjects] = useState([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   // Filter options from API
   const [areaOptions, setAreaOptions] = useState([]);
@@ -39,7 +41,7 @@ const AllProjectsSection = () => {
 
   // Fetch projects when filters or page changes
   useEffect(() => {
-    const params = { page, limit: 12 };
+    const params = { page, limit: 9 };
 
     // Add filters to params if selected
     if (selectedAreas.length > 0) {
@@ -49,23 +51,61 @@ const AllProjectsSection = () => {
       params.types = selectedTypes.join(',');
     }
 
+    setLoading(true);
     api
       .getProjects(params)
       .then((r) => {
-        setProjects(r.data.data);
-        setTotal(r.data.total);
+        console.log('API Response - Page', page, ':', {
+          returnedItems: r.data.data.length,
+          apiTotal: r.data.total,
+          currentProjectsLength: projects.length,
+        });
+        if (page === 1) {
+          setProjects(r.data.data);
+          setTotal(r.data.total);
+        } else {
+          setProjects((prev) => {
+            const newList = [...prev, ...r.data.data];
+            console.log('After append:', {
+              newListLength: newList.length,
+              willSetTotal:
+                r.data.data.length === 0 ? newList.length : r.data.total,
+            });
+            return newList;
+          });
+          // If we got 0 items, there's nothing more to load
+          if (r.data.data.length === 0) {
+            console.log('Got 0 items, setting total to projects.length');
+            setTotal(projects.length); // Set total to current length to hide button
+          } else {
+            setTotal(r.data.total);
+          }
+        }
+        setLoading(false);
       })
       .catch((err) => {
         console.error('Error fetching projects:', err);
+        setLoading(false);
       });
   }, [page, selectedAreas, selectedTypes]);
 
   // Reset to page 1 when filters change
   useEffect(() => {
-    if (page !== 1) {
-      setPage(1);
-    }
+    setPage(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedAreas, selectedTypes]);
+
+  const handleLoadMore = () => {
+    setPage((prev) => prev + 1);
+  };
+
+  const hasMore = projects.length < total;
+
+  console.log('Render - hasMore calculation:', {
+    projectsLength: projects.length,
+    total: total,
+    hasMore: hasMore,
+  });
 
   return (
     <Wrapper className='section-container' ref={projectsRef}>
@@ -111,24 +151,46 @@ const AllProjectsSection = () => {
           <Cards cardsData={projects} gridRows='big-screen grid' />
         </ScrollReveal>
 
-        {total > 12 && (
-          <div className='pagination'>
+        {hasMore && (
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: '2rem',
+            }}
+          >
             <button
-              disabled={page === 1}
-              onClick={() => setPage(page - 1)}
-              className='pagination-btn'
+              onClick={handleLoadMore}
+              disabled={loading}
+              style={{
+                padding: '0.75rem 2rem',
+                background: 'transparent',
+                color: 'white',
+                border: '2px solid white',
+                borderRadius: '8px',
+                fontWeight: 600,
+                fontSize: '1rem',
+                cursor: loading ? 'not-allowed' : 'pointer',
+                transition: 'all 0.2s',
+                opacity: loading ? 0.6 : 1,
+              }}
+              onMouseEnter={(e) => {
+                if (!loading) {
+                  e.target.style.background = 'transparent';
+                  // e.target.style.color = '#0f5132';
+                  e.target.style.transform = 'translateY(-2px)';
+                  e.target.style.boxShadow =
+                    '0 4px 12px rgba(255, 255, 255, 0.2)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                // e.target.style.background = '#0f5132';
+                e.target.style.color = 'white';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+              }}
             >
-              Previous
-            </button>
-            <span className='page-info'>
-              Page {page} of {Math.ceil(total / 12)}
-            </span>
-            <button
-              disabled={page >= Math.ceil(total / 12)}
-              onClick={() => setPage(page + 1)}
-              className='pagination-btn'
-            >
-              Next
+              {loading ? t2('buttons.loading') : t2('buttons.showMore')}
             </button>
           </div>
         )}

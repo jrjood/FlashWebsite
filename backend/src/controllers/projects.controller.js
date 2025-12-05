@@ -66,6 +66,7 @@ export async function listProjects(req, res) {
     limit,
     offset,
     include: [{ model: ProjectMedia, as: 'media' }],
+    distinct: true, // Fix: Don't count joined rows
   });
   res.json({ data: rows, total: count, page, pageSize: limit });
 }
@@ -159,7 +160,8 @@ export async function addMedia(req, res) {
     const uploaded = [];
     for (const f of files) {
       const type = f.mimetype.startsWith('video') ? 'video' : 'image';
-      const url = `${process.env.BASE_URL || ''}/uploads/${f.filename}`;
+      const relativePath = f.path.replace(/\\/g, '/').split('/uploads/')[1];
+      const url = `${process.env.BASE_URL || ''}/uploads/${relativePath}`;
       uploaded.push({ type, url, filename: f.filename });
     }
     return res.json({ media: uploaded });
@@ -172,7 +174,8 @@ export async function addMedia(req, res) {
   for (const f of files) {
     // decide type by mimetype
     const type = f.mimetype.startsWith('video') ? 'video' : 'image';
-    const url = `${process.env.BASE_URL || ''}/uploads/${f.filename}`;
+    const relativePath = f.path.replace(/\\/g, '/').split('/uploads/')[1];
+    const url = `${process.env.BASE_URL || ''}/uploads/${relativePath}`;
     const pm = await ProjectMedia.create({ projectId: project.id, type, url });
     created.push(pm);
   }
@@ -196,6 +199,7 @@ export async function linkTempMedia(req, res) {
     const ext = filename.split('.').pop().toLowerCase();
     const videoExts = ['mp4', 'mov', 'avi', 'webm', 'mkv'];
     const type = videoExts.includes(ext) ? 'video' : 'image';
+    // Filename already includes subfolder path from temp upload
     const url = `${process.env.BASE_URL || ''}/uploads/${filename}`;
 
     // Check if file exists

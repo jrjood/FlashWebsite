@@ -10,7 +10,9 @@
   "buttons": {
     "learnMore": "LEARN MORE",
     "readMore": "Read More",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "showMore": "Show More",
+    "loading": "Loading..."
   },
   "contact": {
     "emailLabel": "EMAIL US",

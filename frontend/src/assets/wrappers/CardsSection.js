@@ -20,12 +20,16 @@ const Wrapper = styled.section`
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+    position: relative;
+    z-index: 10;
   }
 
   .filters-row {
     display: flex;
     gap: 0.75rem;
     align-items: center;
+    position: relative;
+    z-index: 10;
   }
 
   .pagination {
@@ -168,7 +172,7 @@ const Wrapper = styled.section`
   }
 
   .btn-container {
-    align-self: flex-end;
+    /* align-self: flex-end; */
     align-self: center;
     justify-self: center;
   }

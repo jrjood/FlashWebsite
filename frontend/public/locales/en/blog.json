@@ -1,0 +1,12 @@
+{
+  "hero": {
+    "title": "Real Estate Insights & News",
+    "subtitle": "Stay updated with the latest trends, tips, and insights from the world of real estate"
+  },
+  "empty_state": {
+    "title": "No posts yet",
+    "description": "Check back soon for exciting real estate content!"
+  },
+  "load_more": "Show More",
+  "loading": "Loading..."
+}

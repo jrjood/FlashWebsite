@@ -40,7 +40,7 @@ export default function ProjectDetail() {
       <div>
         <Template
           images={project.media || []}
-          tags={[project.title, project.area, project.type, project.subtitle]}
+          tags={[project.title, project.area, project.type, project.developer]}
           desc={project.description}
         />
         <InspirationSection quote='WHERE LIFESTYLE MEETS INVESTMENT' />

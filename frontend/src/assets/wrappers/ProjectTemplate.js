@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  background: linear-gradient(to bottom, #000000 0%, #0a3d24 50%, #0f5132 100%);
+  background: var(--black);
   padding: 2rem;
   text-align: center;
   padding-top: 10rem;

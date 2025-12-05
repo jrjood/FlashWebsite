@@ -3,7 +3,8 @@
   "type": "module",
   "scripts": {
     "dev": "node src/server.js",
-    "seed": "node src/seed/seed.js"
+    "seed": "node src/seed/seed.js",
+    "migrate-uploads": "node migrateUploads.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

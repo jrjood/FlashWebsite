@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+import useScrollReveal from '../../hooks/useScrollReveal';
+import { ScrollReveal } from '../../components/ScrollReveal';
 
 const Wrapper = styled.section`
   background-color: var(--primary-300);
@@ -27,10 +29,19 @@ const Wrapper = styled.section`
 const SmallSection = () => {
   const { t, i18n } = useTranslation('about');
   const isAr = i18n.language?.startsWith('ar');
+  const { ref: smallRef, isVisible: smallVisible } = useScrollReveal({
+    threshold: 0.3,
+  });
 
   return (
-    <Wrapper dir={isAr ? 'rtl' : 'ltr'}>
-      <h3>{t('small.text')}</h3>
+    <Wrapper dir={isAr ? 'rtl' : 'ltr'} ref={smallRef}>
+      <ScrollReveal
+        $isVisible={smallVisible}
+        $animation='fadeInUp'
+        $duration='1s'
+      >
+        <h3>{t('small.text')}</h3>
+      </ScrollReveal>
     </Wrapper>
   );
 };

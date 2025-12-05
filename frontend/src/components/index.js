@@ -19,3 +19,4 @@ export { default as CheckboxFilter } from './CheckboxFilter';
 export { default as HomeCards } from './HomeCards';
 export { default as PageLoader } from './PageLoader';
 export { default as ScrollReveal, StaggerContainer } from './ScrollReveal';
+export { default as Pagination } from './Pagination';
