@@ -19,7 +19,7 @@ const PropositionSection = () => {
           $animation='fadeInUp'
           $duration='0.8s'
         >
-          <h2 className='title title-big'>{t('proposition.title')}</h2>
+          <h2 className='title title-medium'>{t('proposition.title')}</h2>
         </ScrollReveal>
         <div className='content'>
           <ScrollReveal

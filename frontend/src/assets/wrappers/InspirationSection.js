@@ -12,7 +12,7 @@ const Wrapper = styled.section`
   background-repeat: no-repeat;
   /* ✅ the important bit: bind to a prop so it always wins */
   background-position-x: ${(p) => (p.$rtl ? '2%' : '98%')};
-  background-size: contain;
+  background-size: 20%;
   /* border-bottom: 0.1rem solid var(--main-green); */
 
   .container {
@@ -50,8 +50,8 @@ const Wrapper = styled.section`
   }
   .text-box {
     color: var(--black);
-    font-size: 1.125rem;
-    max-width: 62%;
+    /* font-size: 1.125rem; */
+    max-width: 72%;
     line-height: 1.5;
   }
   .quote {
@@ -167,6 +167,9 @@ const Wrapper = styled.section`
     .title {
       margin-bottom: 0;
     }
+    .quote {
+      font-size: 1.5rem;
+    }
   }
   @media (max-width: 44rem) {
     .container {
@@ -178,7 +181,7 @@ const Wrapper = styled.section`
   }
   @media (max-width: 27rem) {
     .quote {
-      font-size: 2.3rem;
+      /* font-size: 1.3rem; */
     }
   }
   @media (max-width: 12.5rem) {

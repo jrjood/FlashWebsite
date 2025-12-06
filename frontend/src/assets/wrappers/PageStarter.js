@@ -33,24 +33,70 @@ const Wrapper = styled.section`
     text-transform: uppercase;
     font-size: 4rem;
     text-align: center;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 64rem) {
+    padding: 0 3rem;
+
+    .info {
+      font-size: 3.5rem;
+    }
+
+    .content {
+      height: 28rem;
+      padding: 0 1.5rem;
+    }
   }
 
   @media (max-width: 48rem) {
-    .info {
-      font-size: 4.1rem;
-    }
-    .content {
-      justify-content: center;
-    }
-  }
-  @media (max-width: 44rem) {
-    .info {
-      font-size: 3.8rem;
-    }
-  }
-  @media (max-width: 36rem) {
+    padding: 0 2rem;
+
     .info {
       font-size: 3rem;
+    }
+
+    .content {
+      justify-content: center;
+      height: 25rem;
+      padding: 0 1rem;
+    }
+  }
+
+  @media (max-width: 44rem) {
+    padding: 0 1.5rem;
+
+    .info {
+      font-size: 2.5rem;
+    }
+
+    .content {
+      height: 22rem;
+    }
+  }
+
+  @media (max-width: 36rem) {
+    padding: 0 1rem;
+
+    .info {
+      font-size: 2rem;
+    }
+
+    .content {
+      height: 20rem;
+      padding: 0 0.5rem;
+    }
+  }
+
+  @media (max-width: 27rem) {
+    padding: 0 0.5rem;
+
+    .info {
+      /* font-size: 2.5rem; */
+    }
+
+    .content {
+      height: 18rem;
     }
   }
 `;

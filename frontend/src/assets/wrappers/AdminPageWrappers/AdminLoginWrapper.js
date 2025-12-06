@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  font-family: 'Rubik';
   min-height: 100vh;
   display: flex;
   align-items: center;

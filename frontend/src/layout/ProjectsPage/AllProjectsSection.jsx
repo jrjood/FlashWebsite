@@ -108,8 +108,8 @@ const AllProjectsSection = () => {
   });
 
   return (
-    <Wrapper className='section-container' ref={projectsRef}>
-      <div className='container'>
+    <Wrapper className='section-container ' ref={projectsRef}>
+      <div className='container '>
         <div className='header'>
           <ScrollReveal
             $isVisible={projectsVisible}
@@ -157,6 +157,7 @@ const AllProjectsSection = () => {
               display: 'flex',
               justifyContent: 'center',
               marginBottom: '2rem',
+              padding: '0 1rem',
             }}
           >
             <button
@@ -173,6 +174,9 @@ const AllProjectsSection = () => {
                 cursor: loading ? 'not-allowed' : 'pointer',
                 transition: 'all 0.2s',
                 opacity: loading ? 0.6 : 1,
+                minWidth: '150px',
+                width: 'auto',
+                maxWidth: '100%',
               }}
               onMouseEnter={(e) => {
                 if (!loading) {

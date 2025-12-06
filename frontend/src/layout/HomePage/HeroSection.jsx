@@ -35,8 +35,8 @@ const HeroSection = () => {
         >
           <div className='left flex-center'>
             <div className='info'>
-              <p>{t('hero.line1')}</p>
-              <p>{t('hero.line2')}</p>
+              <h2>{t('hero.line1')}</h2>
+              <h2>{t('hero.line2')}</h2>
               {/* <p>{t('hero.line3')}</p> */}
               {/* <p>{t('hero.line4')}</p> */}
             </div>

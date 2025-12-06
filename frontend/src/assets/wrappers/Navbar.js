@@ -6,9 +6,10 @@ const Wrapper = styled.nav`
   position: ${({ $isSticky }) => ($isSticky ? 'fixed' : 'absolute')};
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 11;
   background: transparent;
   box-shadow: none;
+  font-family: 'Rubik';
 
   .test {
     display: flex;
@@ -29,15 +30,13 @@ const Wrapper = styled.nav`
       font-weight: 350;
       /* color: var(--white); */
     }
-
-    .line {
-      height: 1.5rem;
-      width: 0.05rem;
-      background-color: ${({ $isSticky }) =>
-        $isSticky ? '#050505' : 'var(--white)'};
-    }
   }
-
+  .line {
+    height: 1.5rem;
+    width: 0.05rem;
+    background-color: ${({ $isSticky }) =>
+      $isSticky ? '#050505' : 'var(--white)'};
+  }
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -109,7 +108,7 @@ const Wrapper = styled.nav`
     display: block;
     transition: var(--transition);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
   }
   li {
     text-transform: uppercase;

@@ -59,13 +59,14 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: start;
     color: var(--primary-400);
+    font-family: 'Rubik';
     span {
       gap: 0.2rem;
       font-size: 2rem;
       font-weight: bold;
       color: #a9a9a9;
       display: flex;
-      font-family: 'Roboto';
+      font-family: 'Rubik';
       /* margin-top: 0.5rem; */
     }
   }

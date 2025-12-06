@@ -46,22 +46,57 @@ const Wrapper = styled.section`
     margin: 0 1rem;
   }
 
-  @media (max-width: 44rem) {
-    height: 100%;
+  @media (max-width: 64rem) {
+    .btn-container {
+      width: 90%;
+    }
+
+    .btn-contact {
+      font-size: 1.25rem;
+      height: 5.5rem;
+    }
+  }
+
+  @media (max-width: 48rem) {
+    padding: 3rem 1.5rem;
+
+    .title {
+      font-size: 1.75rem;
+      text-align: center;
+    }
+    .section-container {
+      padding: 0;
+    }
+
     .contact-top {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      transform: none;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
 
     .divider {
       display: none;
     }
-    .contact-circle {
-      width: 5rem;
+
+    .btn-container {
+      width: 100%;
+    }
+
+    .btn-contact {
+      font-size: 1.125rem;
       height: 5rem;
-      font-size: 1.8rem;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    padding: 2rem 1rem;
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .btn-contact {
+      font-size: 1rem;
+      height: 4.5rem;
     }
   }
 `;

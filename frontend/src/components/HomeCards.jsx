@@ -32,7 +32,7 @@ const Cards = ({ gridRows, cardsData }) => {
                     alt={t(proj.key)}
                   />
                   <div className='overlay' />
-                  <div className='label'>{t(proj.title)}</div>
+                  <p className='label'>{t(proj.title)}</p>
                 </Link>
               </SwiperSlide>
             ))}
@@ -48,7 +48,7 @@ const Cards = ({ gridRows, cardsData }) => {
           >
             <img className='img' src={proj.coverImage} alt={t(proj.key)} />
             <div className='overlay' />
-            <div className='label'>{t(proj.title)}</div>
+            <p className='label'>{t(proj.title)}</p>
           </Link>
         ))}
       </div>

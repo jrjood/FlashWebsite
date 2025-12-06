@@ -10,7 +10,7 @@ const Cards = ({ gridRows, cardsData }) => {
 
   return (
     <>
-      {isMobile && (
+      {/* {isMobile && (
         <div className='small-screen'>
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -35,8 +35,12 @@ const Cards = ({ gridRows, cardsData }) => {
             ))}
           </Swiper>
         </div>
-      )}
-      <div className={gridRows}>
+      )} */}
+      <div
+        className={
+          isMobile ? `${gridRows} grid--2--col` : `${gridRows} grid--3--col`
+        }
+      >
         {cardsData.map((proj, i) => (
           <Link to={`/projects/${proj.title}`} className={'card'} key={i}>
             <img className='img' src={proj.coverImage} alt={t(proj.key)} />

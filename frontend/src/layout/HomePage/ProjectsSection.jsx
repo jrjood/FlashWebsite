@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HomeCards } from '../../components';
 import projects from '../../utils/projects';
-import Wrapper from '../../assets/wrappers/CardsSection';
+import Wrapper from '../../assets/wrappers/HomeCardsSection';
 import { useTranslation } from 'react-i18next';
 import api from '../../api/api';
 import { useState, useEffect } from 'react';
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
         >
           <HomeCards
             cardsData={projects}
-            gridRows='big-screen grid grid--2--row'
+            gridRows='big-screen home-big-screen grid grid--2--row grid--3--col'
           />
         </ScrollReveal>
 

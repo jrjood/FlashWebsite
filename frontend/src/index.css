@@ -179,14 +179,14 @@ body {
   background: linear-gradient(135deg, #0f5132 0%, #0a3d24 50%, #000000 100%);
   background-attachment: fixed;
   color: var(--white);
-  font-family: 'EB Garamond', serif, system-ui, sans-serif, 'Rubik', 'Segoe UI',
-    'Open Sans', 'Helvetica Neue';
+
   font-weight: 400;
   line-height: 1;
   transition: var(--transition);
 }
 p {
   margin: 0;
+  font-family: 'Rubik';
 }
 h1,
 h2,
@@ -199,6 +199,8 @@ h5 {
   /* color: var(--white); */
   text-transform: capitalize;
   letter-spacing: var(--letter-spacing);
+  font-family: 'EB Garamond', serif, system-ui, sans-serif, 'Rubik', 'Segoe UI',
+    'Open Sans', 'Helvetica Neue';
 }
 
 /* BIGGER FONTS */
@@ -474,15 +476,15 @@ button:disabled {
 @media (max-width: 44rem) {
   .btn {
     font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    width: 7rem;
+    /* padding: 0.5rem 1rem; */
+    /* width: 7rem; */
   }
 }
 @media (max-width: 36rem) {
   .btn {
     font-size: 0.8rem;
-    padding: 0.3rem 0.6rem;
-    width: 6rem;
+    /* padding: 0.3rem 0.6rem; */
+    /* width: 6rem; */
   }
   .title-medium {
     font-size: 2.2rem;
@@ -492,8 +494,8 @@ button:disabled {
 @media (max-width: 27rem) {
   .btn {
     /* font-size: 0.7rem; */
-    padding: 0.3rem 0.5rem;
-    width: 5rem;
+    /* padding: 0.3rem 0.5rem; */
+    /* width: 5rem; */
   }
   .title-medium {
     font-size: 1.8rem;

@@ -20,7 +20,7 @@ export default function ContactsSection() {
           >
             <IoMdMail />
           </a>
-          <h4 className='label'>{t('contact.emailLabel')}</h4>
+          <p className='label'>{t('contact.emailLabel')}</p>
           <a
             className='info'
             target='_blank'
@@ -43,7 +43,7 @@ export default function ContactsSection() {
           >
             <FaPhone />
           </a>
-          <h4 className='label'>{t('contact.callLabel')}</h4>
+          <hp className='label'>{t('contact.callLabel')}</hp>
           <a
             className='info'
             target='_blank'
@@ -66,7 +66,7 @@ export default function ContactsSection() {
           >
             <FaLocationDot />
           </a>
-          <h4 className='label'>{t('contact.visitLabel')}</h4>
+          <p className='label'>{t('contact.visitLabel')}</p>
           <a
             className='info'
             target='_blank'

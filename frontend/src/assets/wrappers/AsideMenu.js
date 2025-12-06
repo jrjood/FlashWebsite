@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const AsideMenu = styled.aside`
   display: none;
-  z-index: 1;
+  z-index: 11;
   padding-top: 3rem;
 
   @media (max-width: 48rem) {
@@ -59,7 +59,7 @@ const AsideMenu = styled.aside`
 
   .nav-link {
     margin: 0.5rem 0;
-    font-family: 'Rama Gothic M';
+    font-family: 'Rubik';
     color: var(--white);
     font-size: 2rem;
     transition: var(--transition);

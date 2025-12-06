@@ -5,13 +5,13 @@ const Wrapper = styled.section`
   height: fit-content;
   width: 100%;
   display: flex;
-  align-items: center;
-  background-color: var(--primary-300);
+  align-items: start;
+  /* background-color: var(--primary-300); */
   background-image: url(${bgImage});
   background-repeat: no-repeat;
   /* ✅ the important bit: bind to a prop so it always wins */
   background-position-x: ${(p) => (p.$rtl ? '2%' : '98%')};
-  /* background-size: contain; */
+  background-size: 40%;
 
   .container {
     width: 100%;
@@ -31,7 +31,7 @@ const Wrapper = styled.section`
     gap: 5rem;
   }
   .feature {
-    padding: 3rem 0;
+    /* padding: 3rem 0; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -64,7 +64,7 @@ const Wrapper = styled.section`
   .newsletter-title {
     color: var(--black);
     font-family: 'Rama Gothic M';
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -150,38 +150,86 @@ const Wrapper = styled.section`
     }
   }
 
+  @media (max-width: 64rem) {
+    .container {
+      max-width: 70%;
+      margin: 0 3rem;
+    }
+
+    .newsletter-title {
+      font-size: 2.25rem;
+    }
+
+    .social-icons {
+      font-size: 1.75rem;
+    }
+  }
+
   @media (max-width: 48rem) {
+    background: none;
+
     .row {
       flex-direction: column;
       gap: 2rem;
     }
+
     .text-box {
       max-width: 100%;
     }
+
     .container {
-      max-width: 80%;
+      max-width: 85%;
       margin: auto;
     }
+
     .title {
       margin-bottom: 0;
+      width: 100%;
     }
-  }
-  @media (max-width: 44rem) {
-    .container {
-      max-width: 100%;
-      display: flex;
+
+    .newsletter-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .social-icons {
       justify-content: center;
-      align-items: center;
+      font-size: 1.5rem;
+      gap: 0.75rem;
+    }
+
+    .feature {
+      padding: 0rem 0;
+    }
+    .content {
+      margin-top: 0;
     }
   }
-  @media (max-width: 27rem) {
+
+  @media (max-width: 30rem) {
+    .container {
+      max-width: 90%;
+    }
+
+    .newsletter-title {
+      font-size: 1.75rem;
+    }
+
+    .social-icons {
+      font-size: 1.25rem;
+      a {
+        padding: 0.4rem;
+      }
+    }
+
     .quote {
-      font-size: 2.3rem;
+      font-size: 2rem;
     }
-  }
-  @media (max-width: 12.5rem) {
-    .input-wrapper input::placeholder {
-      font-size: 0.5rem;
+
+    .content {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      gap: 2rem;
     }
   }
 `;

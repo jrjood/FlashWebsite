@@ -143,20 +143,72 @@ const Wrapper = styled.section`
     justify-self: flex-end;
   }
 
+  @media (max-width: 64rem) {
+    .contact-form {
+      width: 90vw;
+    }
+  }
+
   @media (max-width: 48rem) {
+    padding: 2rem 1.5rem;
+
+    .form-title {
+      font-size: 1.75rem;
+      align-self: center;
+      text-align: center;
+    }
+
+    .contact-form {
+      width: 100%;
+      gap: 1.5rem;
+    }
+
     .form-grid {
       display: flex;
       align-items: center;
       flex-direction: column;
       flex-wrap: wrap;
+      gap: 1.5rem;
     }
+
     .full-width {
       grid-column: 1 / 1;
     }
-    @media (max-width: 11.5rem) {
-      .or-text p {
-        font-size: 0.5rem;
-      }
+
+    .radio-group {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    padding: 1.5rem 1rem;
+
+    .form-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 0.8125rem;
+    }
+
+    .radio-group label {
+      font-size: 0.875rem;
+    }
+
+    input[type='radio'] {
+      width: 1rem !important;
+      height: 1rem !important;
+    }
+
+    .or-text p {
+      font-size: 0.625rem;
     }
   }
 `;

@@ -47,7 +47,7 @@ const AboutSection = () => {
           $duration='0.8s'
           $delay='0.6s'
         >
-          <p className='highlight'>{t('about.highlight')}</p>
+          <h2 className='highlight'>{t('about.highlight')}</h2>
         </ScrollReveal>
 
         <ScrollReveal

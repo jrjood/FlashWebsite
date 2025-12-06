@@ -49,11 +49,11 @@ const Wrapper = styled.section`
     text-transform: uppercase;
   }
   .info {
-    font-size: 6rem;
+    font-size: 4rem;
     line-height: 0.8;
     font-weight: 550;
     text-align: center;
-    P {
+    h2 {
       white-space: nowrap;
     }
   }
@@ -66,7 +66,7 @@ const Wrapper = styled.section`
     p {
       font-weight: 500;
       max-width: 63rem;
-      font-size: 1.35rem;
+      font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 2rem;
       text-align: center;
@@ -75,62 +75,130 @@ const Wrapper = styled.section`
     }
   }
 
-  @media (max-width: 52.5rem) {
-    padding-top: 3rem;
+  @media (max-width: 64rem) {
+    padding: 0 1.5rem;
+
     .info {
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
+
     .right {
       p {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+        max-width: 55rem;
       }
     }
   }
-  @media (max-width: 48rem) {
-    margin: 0 auto;
-    /* max-width: 47rem; */
+
+  @media (max-width: 52.5rem) {
+    padding-top: 3rem;
+
     .info {
-      font-size: 4.1rem;
-      line-height: 1.2;
+      font-size: 3.2rem;
     }
-    .content {
-      padding: 0;
+
+    .right {
+      p {
+        font-size: 0.9rem;
+        max-width: 50rem;
+      }
     }
   }
+
+  @media (max-width: 48rem) {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+
+    .info {
+      font-size: 3rem;
+      line-height: 1.1;
+    }
+
+    .content {
+      padding: 0;
+      gap: 1.5rem;
+    }
+
+    .right {
+      p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        max-width: 90%;
+      }
+    }
+  }
+
   @media (max-width: 44rem) {
     .content {
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      gap: 1rem;
+      gap: 1.5rem;
     }
+
     .right {
       align-items: center;
     }
+
     .info {
-      max-width: 32rem;
+      max-width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.75rem;
       text-align: center;
-      font-size: 3.8rem;
+      font-size: 2.8rem;
+
+      h2 {
+        white-space: normal;
+      }
     }
+
     .right {
       p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
       }
     }
   }
+
   @media (max-width: 36rem) {
+    padding: 1.5rem 1rem;
+
     .info {
-      font-size: 86%;
+      font-size: 2.5rem;
+      gap: 0.5rem;
+    }
+
+    .right {
+      p {
+        font-size: 0.85rem;
+      }
+    }
+
+    .btn {
+      padding: 0.65rem 1.5rem;
+      font-size: 0.9rem;
     }
   }
+
   @media (max-width: 27rem) {
+    padding: 1rem 0.75rem;
+
     .info {
-      font-size: 2.7rem;
+      font-size: 2rem;
+    }
+
+    .right {
+      p {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .btn {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.85rem;
     }
   }
 `;

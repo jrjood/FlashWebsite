@@ -11,16 +11,19 @@ const Wrapper = styled.section`
   .contact-top {
     display: grid;
     grid-template-columns: 1fr 0.1fr 1fr 0.1fr 1fr;
+    align-items: start;
     /* transform: translateY(-8rem); */
     /* font-family: 'Proxima-Nova', sans-serif; */
-    font-weight: 600;
+    /* font-weight: 600; */
+    font-family: 'Rubik';
   }
   .contact-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    justify-items: center;
     text-align: center;
     position: relative;
+    gap: 0.3rem;
   }
   .contact-circle {
     width: 3rem;
@@ -31,7 +34,6 @@ const Wrapper = styled.section`
     color: var(--main-green);
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.7rem;
     font-size: 1.2rem;
     transition: all 0.1s ease-in-out;
     &:hover {
@@ -41,23 +43,29 @@ const Wrapper = styled.section`
   }
   .label {
     /* margin: 0.5rem 0; */
-    font-size: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.2;
   }
   .info {
     color: #ffffff8d;
     /* min-height: 8rem; */
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     text-decoration: none;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    align-self: start;
     &:hover {
       color: #d2d2d2ff;
     }
   }
   .divider {
     width: 1px;
-    height: 5rem;
     background: var(--white);
     opacity: 0.2;
     margin: 0 1rem;
+    align-self: stretch;
   }
   @media (max-width: 44rem) {
     height: 100%;
@@ -66,6 +74,7 @@ const Wrapper = styled.section`
       flex-direction: column;
       gap: 2rem;
       transform: none;
+      align-items: center;
     }
 
     .divider {

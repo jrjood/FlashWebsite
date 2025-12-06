@@ -71,10 +71,56 @@ const Wrapper = styled.section`
 
   .contact-form button {
     align-self: center;
+    min-width: 200px;
   }
+
+  @media (max-width: 64rem) {
+    .contact-form {
+      width: 90vw;
+    }
+  }
+
   @media (max-width: 48rem) {
+    padding: 2rem 1.5rem;
+
+    .form-title {
+      font-size: 1.75rem;
+      align-self: center;
+      text-align: center;
+    }
+
     .contact-form {
       flex-direction: column;
+      width: 100%;
+      gap: 1.5rem;
+    }
+
+    .left-fields,
+    .right-fields {
+      gap: 1rem;
+    }
+
+    .contact-form button {
+      width: 100%;
+      min-width: unset;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    padding: 1.5rem 1rem;
+
+    .form-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 0.8125rem;
+    }
+
+    .btn-container {
+      padding-bottom: 2rem;
     }
   }
 

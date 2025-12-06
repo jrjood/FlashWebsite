@@ -93,11 +93,21 @@ const Wrapper = styled.section`
   .card-slide {
     /* width: 100%; */
     height: 17rem;
+    min-height: 17rem;
     border-radius: var(--border-radius);
+    display: block;
+    position: relative;
+    overflow: hidden;
   }
   .small-screen {
     border-radius: var(--border-radius);
     display: none;
+
+    .card-slide {
+      height: 20rem;
+      min-height: 20rem;
+    }
+
     &:hover .overlay {
       opacity: 0.4;
       transform: scale(1.1);
@@ -113,15 +123,18 @@ const Wrapper = styled.section`
     .img {
       border-radius: 3px;
       transition: var(--transition);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
   }
   .card {
     position: relative;
     overflow: hidden;
     border-radius: 3px;
+
     cursor: pointer;
-    height: 20rem;
-    min-height: 20rem;
 
     &:hover .overlay {
       opacity: 0.4;
@@ -139,15 +152,12 @@ const Wrapper = styled.section`
 
   .big-card {
     grid-row: 1/3;
-    height: auto;
-    min-height: 100%;
   }
 
   .img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
     display: block;
     transition: var(--transition);
   }
@@ -202,169 +212,69 @@ const Wrapper = styled.section`
       color: #555;
     }
   }
-
-  @media (max-width: 75rem) {
-    .grid {
-      gap: 1.25rem;
-    }
-
-    .card {
-      height: 18rem;
-      min-height: 18rem;
-    }
-
-    .card-slide {
-      height: 15rem;
-    }
-  }
-
   @media (max-width: 62rem) {
-    .container {
-      /* padding: 0 1rem; */
+    .label {
+      font-size: 0.9rem;
     }
 
     .header {
       flex-direction: column;
       align-items: flex-start;
-      gap: 1.5rem;
-    }
-
-    .title {
-      width: 100%;
     }
 
     .filters-row {
       width: 100%;
       flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .grid {
-      gap: 1rem;
-    }
-
-    .card {
-      height: 16rem;
-      min-height: 16rem;
-    }
-
-    .card-slide {
-      height: 14rem;
-    }
-
-    .label {
-      font-size: 0.8rem;
-      height: 2.25rem;
-      padding: 0.4rem 0.8rem;
     }
   }
-
   @media (max-width: 48rem) {
-    .container {
-      /* padding: 0 1rem; */
-    }
-
-    .grid--3--col {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .big-card {
-      grid-row: auto;
-      height: 16rem;
-      min-height: 16rem;
-    }
-
-    .card {
-      height: 16rem;
-      min-height: 16rem;
-    }
-
     .big-screen {
       /* display: none; */
     }
-
     .home-big-screen {
       display: none;
     }
-
     .small-screen {
       display: block;
-    }
 
-    .card-slide {
-      height: 12rem;
+      .card-slide {
+        height: 22rem;
+        min-height: 22rem;
+      }
     }
-
     .label {
-      width: 80%;
-      font-size: 0.75rem;
-      height: 2rem;
-      bottom: 2rem;
-    }
-
-    .filters-row {
-      flex-direction: column;
-      align-items: stretch;
-      width: 100%;
+      width: 85%;
+      font-size: 1rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
     }
   }
 
   @media (max-width: 36rem) {
-    .grid--3--col,
-    .grid--2--col {
-      grid-template-columns: 1fr;
+    .small-screen {
+      .card-slide {
+        height: 20rem;
+        min-height: 20rem;
+      }
     }
-
-    .card {
-      height: 18rem;
-      min-height: 18rem;
-    }
-
-    .big-card {
-      height: 18rem;
-      min-height: 18rem;
-    }
-
-    .card-slide {
-      height: 16rem;
-    }
-
     .label {
-      width: 85%;
       font-size: 0.9rem;
       height: 2.25rem;
     }
   }
 
   @media (max-width: 27rem) {
-    .container {
-      /* padding: 0 0.5rem; */
+    .small-screen {
+      .card-slide {
+        height: 18rem;
+        min-height: 18rem;
+      }
     }
-
-    .grid {
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .card {
-      height: 16rem;
-      min-height: 16rem;
-    }
-
-    .big-card {
-      height: 16rem;
-      min-height: 16rem;
-    }
-
-    .card-slide {
-      height: 14rem;
-    }
-
     .label {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       height: 2rem;
-      padding: 0.3rem 0.6rem;
-      bottom: 1.5rem;
+      width: 90%;
     }
   }
 `;

@@ -166,6 +166,8 @@ export default function Blog() {
                     border: '2px solid #0f5132',
                     borderRadius: '8px',
                     fontWeight: 600,
+                    fontFamily: 'EB Garamond',
+                    textTransform: 'uppercase',
                     fontSize: '1rem',
                     cursor: loading ? 'not-allowed' : 'pointer',
                     transition: 'all 0.2s',
