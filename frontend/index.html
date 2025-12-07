@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flash Investment</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(
+          135deg,
+          #bec4c1ff 0%,
+          #bfc5c2ff 50%,
+          #ffffffff 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999999;
+        transition: opacity 0.5s ease;
+      }
+
+      .initial-loader-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .initial-logo {
+        max-width: 15rem;
+        animation: initialPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes initialPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.9;
+        }
+      }
+
+      .initial-spinner {
+        width: 2rem;
+        height: 2rem;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #0f5132;
+        border-radius: 50%;
+        animation: initialSpin 1s linear infinite;
+      }
+
+      @keyframes initialSpin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .initial-logo {
+          max-width: 10rem;
+        }
+        .initial-spinner {
+          width: 50px;
+          height: 50px;
+          border-width: 3px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="initial-loader">
+      <div class="initial-loader-content">
+        <img
+          src="./src/assets/images/logoblack.png"
+          class="initial-logo"
+          viewBox="0 0 200 80"
+        />
+        <div class="initial-spinner"></div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

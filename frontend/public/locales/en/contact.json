@@ -1,0 +1,74 @@
+{
+  "contact": {
+    "contact_starter": "Contact Us",
+    "follow_us": "Follow us on social media",
+    "select": {
+      "title": "Contact Options",
+      "buttons": {
+        "contact_us": "Send Mail",
+        "site_visit": "Site Visit",
+        "join_us": "Join Us"
+      }
+    },
+    "form": {
+      "back": "go back →",
+      "title": "GET IN TOUCH",
+      "placeholders": {
+        "full_name": "FULL NAME*",
+        "email": "EMAIL ADDRESS*",
+        "phone": "MOBILE NUMBER*",
+        "job_title": "JOB TITLE (OPTIONAL)",
+        "company_name": "COMPANY NAME",
+        "message": "MESSAGE"
+      },
+      "button": "SEND",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again.",
+      "sending": "Sending...",
+      "success_title": "Success!",
+      "error_title": "Error",
+      "close": "Close"
+    },
+    "site_visit": {
+      "back": "go back →",
+      "title": "Reserve a Site Visit",
+      "placeholders": {
+        "full_name": "FULL NAME*",
+        "email": "EMAIL ADDRESS*",
+        "phone": "MOBILE NUMBER*",
+        "date": "Select a Date*",
+        "time_slot": "Select Time Slot*",
+        "message": "MESSAGE"
+      },
+      "button": "Book Now",
+      "success": "Site visit request submitted successfully!",
+      "error": "Failed to submit request. Please try again.",
+      "sending": "Sending...",
+      "success_title": "Success!",
+      "error_title": "Error",
+      "close": "Close"
+    },
+    "join_crew": {
+      "back": "go back →",
+      "title": "Wanna be a part of the crew?",
+      "placeholders": {
+        "full_name": "FULL NAME*",
+        "email": "EMAIL ADDRESS*",
+        "phone": "MOBILE NUMBER*",
+        "position": "Select Position*"
+      },
+      "upload": {
+        "choose_or_drag": "Choose a file or drag it here",
+        "file_selected": "File selected",
+        "remove": "Remove"
+      },
+      "button": "SEND",
+      "success": "Application submitted successfully!",
+      "error": "Failed to submit application. Please try again.",
+      "sending": "Sending...",
+      "success_title": "Success!",
+      "error_title": "Error",
+      "close": "Close"
+    }
+  }
+}

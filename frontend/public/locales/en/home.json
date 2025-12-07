@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "line1": "WHERE SPEED",
+    "line2": "MEETS SUCCESS",
+    "line3": "",
+    "line4": "",
+    "paragraph": "At Flash Investment, we believe real estate is more than buildings—it’s about shaping communities and creating lasting value. With a team of 100+ experts and our headquarters in Cairo, we deliver innovative residential and commercial projects that redefine Egypt’s property landscape.",
+    "button": "LEARN MORE"
+  },
+  "about": {
+    "paragraph": "At Flash Investment, building isn’t just about bricks and mortar; it’s about vision, trust, and creating lasting value. We’re not your typical real estate company. We’re the planners, the builders, and the innovators shaping Egypt’s property future.",
+    "highlight": "REAL ESTATE IS OUR DNA",
+    "button": "GET IN TOUCH"
+  },
+  "milestones": {
+    "topText": "Our portfolio showcases a wide range of successful projects that highlight our commitment to quality and innovation in real estate.",
+    "clients": "CLIENTS",
+    "projects": "PROJECTS",
+    "since": "SINCE",
+    "sinceSmall": "Since",
+    "sinceYear": "2020",
+    "plus": "+"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "button": "Explore more",
+    "project1": "project one",
+    "project2": "project two",
+    "project3": "project three",
+    "project4": "project four",
+    "project5": "project five"
+  },
+  "services": {
+    "popup_button": "Explore Projects",
+    "title": "Services",
+    "items": {
+      "Swimming_Pools": {
+        "title": "Swimming_Pools",
+        "text": "Various swimming pools designed for both adults and children, ensuring safe and enjoyable experiences for the entire family."
+      },
+      "Health_Club_and_Spa": {
+        "title": "Health_Club_and_Spa",
+        "text": "A fully integrated sports center and spa area offering fitness facilities, relaxation zones, and wellness services."
+      },
+      "Commercial_Areas": {
+        "title": "Commercial_Areas",
+        "text": "Conveniently located cafes, restaurants, and a supermarket to meet daily needs within the community."
+      },
+      "Security_and_Guarding": {
+        "title": "Security_and_Guarding",
+        "text": "24/7 security and professional guarding services to ensure safety, comfort, and peace of mind."
+      },
+      "Childrens_Area": {
+        "title": "Childrens_Area",
+        "text": "Safe, designated play areas where children can enjoy recreational activities under secure supervision."
+      },
+      "Bicycle_Paths": {
+        "title": "Bicycle_Paths",
+        "text": "Dedicated cycling and walking paths designed for safety, fitness, and leisure."
+      },
+      "Sports_Fields": {
+        "title": "Sports_Fields",
+        "text": "Multi-purpose courts for tennis, football, and basketball, offering residents spaces to stay active and engaged."
+      },
+      "Parking": {
+        "title": "Parking",
+        "text": "Private parking facilities allocated for each unit, ensuring security and convenience for residents."
+      }
+    }
+  },
+  "logoCarousel": {
+    "title": "PARTNERS",
+    "button": "Show all →"
+  }
+}
