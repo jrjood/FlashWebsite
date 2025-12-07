@@ -34,6 +34,10 @@ const Wrapper = styled.div`
   }
 
   .logo-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin-bottom: 2rem;
   }
