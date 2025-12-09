@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import Wrapper from '../assets/wrappers/Popup';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -18,7 +19,7 @@ const Popup = ({ onClose, data }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [onClose]);
 
-  return (
+  return createPortal(
     <Wrapper $background={data.image}>
       <div className='popup-container' ref={popupRef}>
         <button className='closeBtn' onClick={onClose}>
@@ -42,7 +43,8 @@ const Popup = ({ onClose, data }) => {
           </Link>
         </div>
       </div>
-    </Wrapper>
+    </Wrapper>,
+    document.body
   );
 };
 

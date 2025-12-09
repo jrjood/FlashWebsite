@@ -191,10 +191,162 @@ button {
   /* rest of the colors */
   --black: #050505;
   --white: #f7f7f7;
+  --white-pure: #ffffff;
   --red-light: #f8d7da;
   --red-dark: #842029;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
+
+  /* Additional commonly used colors */
+  --text-dark: #0d1b14;
+  --text-medium: #2d3748;
+  --text-light: #4a5568;
+  --text-muted: #a0aec0;
+  --text-lighter: #718096;
+  --text-very-light: #cfcfcf;
+  --text-white-muted: rgba(201, 201, 201, 0.7);
+  --text-white-transparent: rgba(255, 255, 255, 0.9);
+
+  --bg-light: #f7fafc;
+  --bg-medium: #e2e8f0;
+  --bg-dark: #1a202c;
+  --bg-very-light: #f8f9fa;
+  --bg-off-white: #f5f5f5;
+  --bg-hover: #f9f9f9;
+  --bg-gradient-beige: linear-gradient(
+    360deg,
+    #ffffffff 0%,
+    #faf8ef 50%,
+    #f7f4d3ff 100%
+  );
+
+  --loader-gradient: linear-gradient(
+    135deg,
+    #bec4c1ff 0%,
+    #bfc5c2ff 50%,
+    #ffffffff 100%
+  );
+
+  --border-light: #ddd;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: #ccc;
+  --border-blue: #0066cc;
+
+  /* Social media brand colors */
+  --social-facebook: #1255adff;
+  --social-whatsapp: #1b9548ff;
+  --social-instagram: #b11f5cff;
+  --social-linkedin: #0077b5;
+  --social-hover: rgba(0, 0, 0, 0.6);
+
+  /* Additional colors */
+  --blue-primary: #0066cc;
+  --blue-dark: #004999;
+  --blue-info: #1976d2;
+  --blue-light-bg: #e3f2fd;
+  --blue-lighter: #0277bd;
+  --blue-lightest: #bee3f8;
+  --blue-text: #2c5282;
+  --cyan-bg: #e0f2f1;
+  --cyan-text: #00796b;
+  --cyan-light: #e1f5fe;
+  --red-error: #e53e3e;
+  --red-error-dark: #c53030;
+  --red-danger: #d32f2f;
+  --red-text: #9b2c2c;
+  --red-bg: #fed7d7;
+  --red-light: #fc8181;
+  --red-lightest: #ffebee;
+  --red-darkest: #c62828;
+  --pink-accent: #ff0080;
+  --purple-bg: #f3e5f5;
+  --purple-text: #7b1fa2;
+  --purple-light: #e9d8fd;
+  --purple-dark: #553c9a;
+  --orange-bg: #fff3e0;
+  --orange-text: #f57c00;
+  --orange-dark: #7c2d12;
+  --orange-light: #feebc8;
+  --yellow-bg: #fff9c4;
+  --yellow-text: #f57f17;
+  --green-success: #388e3c;
+  --green-success-dark: #2e7d32;
+  --green-bg: #e8f5e9;
+  --green-light: #d1f4e0;
+  --green-lighter: #c8e6c9;
+  --green-lightest: #b8ecc9;
+  --neutral-light: #f0fdf4;
+  --darkgrey: #a9a9a9;
+  --gold: #ffc800;
+  --beige-primary: #e7e1ad;
+  --beige-faded: rgba(231, 225, 173, 0.8);
+  --text-dark-grey: #1a1a1a;
+  --fee: #fee;
+
+  /* Grey scale */
+  --grey-light-extra: #e6e6e6;
+  --grey-light: #ddd;
+  --grey-medium-light: #aaa;
+  --grey-medium: #666;
+  --grey-medium-dark: #555;
+  --grey-dark: #333;
+  --grey-very-dark: #111;
+  --grey-muted: #999;
+  --grey-slate: #c0c0c0;
+  --grey-slate-dark: #a0a0a0;
+  --grey-border: #cbd5e0;
+
+  /* Status colors */
+  --status-pending-bg: #fef3c7;
+  --status-pending-text: #f59e0b;
+  --status-contacted-bg: #e0e8f9;
+  --status-contacted-text: #647acb;
+  --status-declined-bg: #ffeeee;
+  --status-declined-text: #d66a6a;
+  --status-success-bg: #e8f5e9;
+  --status-success-text: #388e3c;
+  --status-info-bg: #e3f2fd;
+  --status-info-text: #1976d2;
+  --status-warning-bg: #fff3e0;
+  --status-warning-text: #f57c00;
+
+  /* Shadows with alpha */
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 10px 24px rgba(0, 0, 0, 0.12);
+  --shadow-card-hover: 0 14px 28px rgba(0, 0, 0, 0.18);
+  --shadow-green: 0 2px 8px rgba(15, 81, 50, 0.3);
+  --shadow-green-hover: 0 4px 12px rgba(15, 81, 50, 0.3);
+  --shadow-white: 0 4px 12px rgba(255, 255, 255, 0.2);
+
+  /* Overlay colors */
+  --overlay-dark: rgba(0, 0, 0, 0.42);
+  --overlay-medium: rgba(0, 0, 0, 0.5);
+  --overlay-strong: rgba(0, 0, 0, 0.75);
+  --overlay-subtle: rgba(0, 0, 0, 0.02);
+  --white-overlay-light: rgba(255, 255, 255, 0.6);
+  --white-overlay-medium: rgba(255, 255, 255, 0.82);
+  --white-overlay-strong: rgba(255, 255, 255, 0.95);
+  --white-overlay-subtle: rgba(255, 255, 255, 0.05);
+  --white-overlay-medium-2: rgba(255, 255, 255, 0.12);
+  --white-overlay-semi: #ffffff40;
+  --white-pure-full: rgba(255, 255, 255, 1);
+
+  /* Gradient backgrounds */
+  --gradient-green-dark: linear-gradient(
+    135deg,
+    #0f5132 0%,
+    #0a3d24 50%,
+    #000000 100%
+  );
+  --gradient-green-medium: linear-gradient(
+    150deg,
+    #0f5132 0%,
+    #0a3d24 50%,
+    #000000 100%
+  );
+  --gradient-green-admin: linear-gradient(135deg, #0f5132 0%, #1a7f4f 100%);
+  --gradient-beige: linear-gradient(135deg, #f1ebc5 0%, #e8d89e 100%);
+  --gradient-beige-text: #3a2c0a;
 
   --small-text: 0.775rem;
   --extra-small-text: 0.7em;

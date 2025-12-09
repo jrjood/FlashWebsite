@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import aboutImage from '../../images/backgrounds/AboutPageImages/logo2.png';
+import aboutImage from '../../images/logoblack.png';
 
 const Wrapper = styled.section`
   display: flex;
@@ -26,7 +26,7 @@ const Wrapper = styled.section`
   .right {
     flex: 1;
     min-width: 40%;
-    color: var(--white);
+    color: var(--black);
     display: flex;
     flex-direction: column;
     justify-content: center;

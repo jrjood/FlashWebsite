@@ -1,5 +1,5 @@
 import { Counter } from '../../components';
-import logo2001 from '../../assets/images/logo-2001.png';
+import logo2001 from '../../assets/images/exp.png';
 import Wrapper from '../../assets/wrappers/HomePageWrappers/MilestonesSection';
 import { useTranslation } from 'react-i18next';
 

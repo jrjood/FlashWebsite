@@ -1,19 +1,18 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useMemo } from 'react';
-
 import logos from '../../assets/images/sponsorLogo';
 import Wrapper from '../../assets/wrappers/LogoCarousel';
 
 export default function LogoCarousel() {
   const { t, i18n } = useTranslation('home');
   const isRTL = i18n.dir() === 'rtl';
-  const swiperKey = isRTL ? 'logos-rtl' : 'logos-ltr';
+  const carouselKey = isRTL ? 'carousel-rtl' : 'carousel-ltr';
+
+  // Duplicate logos for seamless infinite scroll
+  const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <Wrapper className='section-container'>
+    <Wrapper className='section-container' $isRTL={isRTL} key={carouselKey}>
       <div className='carousel-container flex-center container'>
         <div className='btn-with-title'>
           <h2 className='title title-medium'>{t('logoCarousel.title')}</h2>
@@ -22,43 +21,20 @@ export default function LogoCarousel() {
           </Link>
         </div>
 
-        <div className='logo-container' dir={isRTL ? 'rtl' : 'ltr'}>
-          <Swiper
-            key={swiperKey}
-            dir={isRTL ? 'rtl' : 'ltr'}
-            modules={[Autoplay]}
-            observer
-            observeParents
-            spaceBetween={30}
-            loop={true}
-            loopAdditionalSlides={5}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-              reverseDirection: isRTL,
-              pauseOnMouseEnter: true,
-            }}
-            speed={800}
-            breakpoints={{
-              200: { slidesPerView: 3 },
-              768: { slidesPerView: 3 },
-              769: { slidesPerView: 5 },
-            }}
-          >
-            {logos.map((logo, i) => (
-              <SwiperSlide key={i}>
-                <div className='logo-item'>
-                  <img
-                    src={logo.src}
-                    loading='lazy'
-                    decoding='async'
-                    alt={logo.alt || `logo-${i}`}
-                    draggable='false'
-                  />
-                </div>
-              </SwiperSlide>
+        <div className='logo-track-container' dir={isRTL ? 'rtl' : 'ltr'}>
+          <div className='logo-track'>
+            {duplicatedLogos.map((logo, i) => (
+              <div key={i} className='logo-item'>
+                <img
+                  src={logo.src}
+                  loading='lazy'
+                  decoding='async'
+                  alt={logo.alt || `logo-${i}`}
+                  draggable='false'
+                />
+              </div>
             ))}
-          </Swiper>
+          </div>
         </div>
       </div>
     </Wrapper>

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import bgImage from '../assets/images/backgrounds/AboutPageImages/about-bg.png'; // background image
 import {
   PageStarter,
@@ -9,12 +10,13 @@ import {
 } from '../layout/AboutPage/';
 
 const AboutPage = () => {
+  const { t } = useTranslation('about');
   return (
     <>
-      <PageStarter title='about us' imgPath={bgImage} />
+      <PageStarter title={t('about.pageTitle')} imgPath={bgImage} />
       <div
         style={{
-          background: 'linear-gradient( #0f5132 0%, #0a3d24 50%, #000000 100%)',
+          background: 'var(--primary-300)',
         }}
       >
         <AboutSection />

@@ -8,7 +8,7 @@ const Wrapper = styled.section`
   color: var(--white);
   width: 100%;
   height: fit-content;
-  border-bottom: 0.1rem solid var(--main-green);
+  /* border-bottom: 0.1rem solid var(--main-green); */
 
   .content {
     display: grid;
@@ -16,6 +16,9 @@ const Wrapper = styled.section`
     justify-content: center;
     justify-items: center;
     gap: 2rem;
+  }
+  .title {
+    color: var(--black);
   }
   .cards-grid {
     /* display: grid; */
@@ -30,7 +33,7 @@ const Wrapper = styled.section`
   }
   .img-box {
     position: relative;
-    border: 0.3rem solid var(--primary-300);
+    border: 0.2rem solid grey;
 
     width: fit-content;
     height: fit-content;
@@ -94,13 +97,14 @@ const Wrapper = styled.section`
 
   .img-text {
     position: absolute;
-    top: 83%;
+    top: 85%;
 
     /* left: 3%; */
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 0 1rem;
+    width: 100%;
   }
   .owner-title {
     /* font-size: 2.5rem; */

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
   position: relative;
-  background-color: #050505;
+  background-color: var(--black);
   /* text-align: center; */
 
   .container {
@@ -41,7 +41,7 @@ const Wrapper = styled.section`
     min-height: 9rem;
     width: 100%;
     cursor: pointer;
-    /* background: rgba(255, 255, 255, 0.82); */
+    /* background: var(--white-overlay-medium); */
     background-color: var(--primary-300);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
@@ -56,6 +56,7 @@ const Wrapper = styled.section`
       align-items: center;
       justify-content: center;
       line-height: 0;
+      transition: color 160ms ease;
     }
 
     .line-highlight {
@@ -68,7 +69,7 @@ const Wrapper = styled.section`
     }
 
     .card-title {
-      color: #0d1b14;
+      color: var(--text-dark);
       font-weight: 800;
       letter-spacing: 0.2px;
       font-size: 1.05rem;

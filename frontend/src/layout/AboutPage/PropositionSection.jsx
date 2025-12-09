@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import Wrapper from '../../assets/wrappers/AboutPageWrappers/PropositionSection';
 import owner_image from '../../assets/images/backgrounds/AboutPageImages/owner.jpg';
+import owner_image2 from '../../assets/images/backgrounds/AboutPageImages/owner2.jpg';
 import { Founders } from '../../components';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import { ScrollReveal } from '../../components/ScrollReveal';
@@ -43,7 +44,7 @@ const PropositionSection = () => {
             $delay='0.3s'
           >
             <Founders
-              owner_image={owner_image}
+              owner_image={owner_image2}
               ownerName={t('proposition.founder2_name')}
               ownerTitle={t('proposition.founder2_title')}
               ownerBio={t('proposition.founder2_bio')}

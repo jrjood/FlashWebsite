@@ -126,7 +126,7 @@ const Wrapper = styled.section`
   .or-text p {
     position: absolute;
     font-size: 0.75rem;
-    color: #cfcfcf;
+    color: var(--text-very-light);
     left: 0;
     top: 0.625rem;
   }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  background-color: #050505;
+  background-color: var(--black);
   color: var(--white);
   /* text-align: left; */
   padding-bottom: 1rem;
@@ -104,7 +104,7 @@ const Wrapper = styled.section`
     }
 
     &:hover .label {
-      background: #050505;
+      background: var(--black);
       color: var(--white);
     }
     &:hover .img {

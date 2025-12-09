@@ -198,7 +198,7 @@ const Wrapper = styled.section`
   /* Text color to your brand beige */
   .file-upload-text {
     pointer-events: none;
-    color: #e7e1ad;
+    color: var(--beige-primary);
     font-weight: 500;
   }
 
@@ -209,7 +209,7 @@ const Wrapper = styled.section`
     align-items: center;
     gap: 0.75rem;
     font-size: 0.9rem;
-    color: #e7e1ad;
+    color: var(--beige-primary);
   }
 
   .file-name {
@@ -221,8 +221,8 @@ const Wrapper = styled.section`
 
   .file-remove {
     background: transparent;
-    border: 1px solid #e7e1ad;
-    color: #e7e1ad;
+    border: 1px solid var(--beige-primary);
+    color: var(--beige-primary);
     padding: 0.2rem 0.6rem;
     border-radius: 999px;
     cursor: pointer;
@@ -230,7 +230,7 @@ const Wrapper = styled.section`
   }
 
   .file-remove:hover {
-    background: #e7e1ad;
+    background: var(--beige-primary);
     color: var(--main-green); /* contrasts your dark bg */
   }
 
@@ -238,7 +238,7 @@ const Wrapper = styled.section`
   .file-hint {
     margin-top: 0.25rem;
     font-size: 0.8rem;
-    color: rgba(231, 225, 173, 0.8);
+    color: var(--beige-faded);
   }
 
   /* Mobile */

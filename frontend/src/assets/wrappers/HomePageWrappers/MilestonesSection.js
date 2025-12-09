@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import bgImage from '../../images/backgrounds/HomePageImages/milestones-bg.jpg'; // background image
 
 const Wrapper = styled.section`
-  color: #a9a9a9;
+  color: var(--darkgrey);
   background: linear-gradient(
       35deg,
       rgba(12, 65, 40, 0.85) 0%,
@@ -27,6 +27,7 @@ const Wrapper = styled.section`
 
   .container {
     /* height: 35rem; */
+    padding-top: 2rem;
     padding-bottom: 2rem;
     gap: 2rem;
   }
@@ -64,7 +65,7 @@ const Wrapper = styled.section`
       gap: 0.2rem;
       font-size: 2rem;
       font-weight: bold;
-      color: #a9a9a9;
+      color: var(--darkgrey);
       display: flex;
       font-family: 'Rubik';
       /* margin-top: 0.5rem; */
@@ -83,17 +84,17 @@ const Wrapper = styled.section`
   }
   .logo-container {
     position: relative;
-    width: 60%;
+    width: 30%;
     /* height: 12rem; */
     background: linear-gradient(
       90deg,
-      rgba(15, 81, 50, 0.1),
+      rgba(15, 81, 50, 0),
       rgba(26, 127, 79, 0.4)
     );
     img {
       /* padding-right: 2rem; */
-      width: 100%;
-      height: 100%;
+      width: 40%;
+      height: 40%;
       /* padding-left: 3rem; */
     }
     position: relative;
@@ -169,14 +170,14 @@ const Wrapper = styled.section`
         font-family: 'Proxima-Nova', sans-serif;
         text-transform: uppercase;
         font-weight: 500;
-        color: #ffc800;
+        color: var(--gold);
       }
       .small-date {
         font-size: 7rem;
         font-family: 'Rama Gothic M', sans-serif;
         text-transform: uppercase;
         font-weight: 500;
-        color: #ffc800;
+        color: var(--gold);
       }
     }
     .top-text {
