@@ -84,6 +84,10 @@ const Wrapper = styled.section`
       width: 5rem;
       height: 5rem;
       font-size: 1.8rem;
+      &:hover {
+        font-size: 2rem;
+        transform: rotate(-20deg);
+      }
     }
   }
 `;
